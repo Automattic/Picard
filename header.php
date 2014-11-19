@@ -8,6 +8,9 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 	<?php wp_head(); ?>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/libs/react.min.js'; ?>"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/libs/JSXTransformer.js'; ?>"></script>
+	<script type="text/jsx" src="<?php echo get_template_directory_uri() . '/js/picard.js'; ?>"></script>
 </head>
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
