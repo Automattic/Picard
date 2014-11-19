@@ -30,7 +30,7 @@
 		render: function() {
 			var postNodes = this.props.data.map( function ( post ) {
 				return (
-					<Post post_class={post.post_class} link={post.link} title={post.title} date={post.date} content={post.content}/> 
+					<Post post_class={post.post_class} link={post.link} title={post.title} date={post.date} content={post.content.rendered}/> 
 				);
 			});
 			return (
@@ -44,7 +44,6 @@
 	var Post = React.createClass({
 		render: function() {
 			return (
-				// TODO: Add post_class to REST API
 				<article className={this.props.post_class}>
 					<header className="entry-header">
 						<h1 className="entry-title">
