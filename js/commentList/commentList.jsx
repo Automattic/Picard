@@ -1,3 +1,11 @@
+/**
+ * External dependencies
+ */
+var React = require( 'react/addons' );
+
+/**
+ * Internal dependencies
+ */
 var Comment = require( '../comment/comment.jsx' );
 
 var CommentList = React.createClass({

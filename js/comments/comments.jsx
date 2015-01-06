@@ -1,5 +1,13 @@
-var CommentList = require( '../commentList/commentList.jsx' );
-var CommentForm = require( '../commentForm/commentForm.jsx' );
+/**
+ * External dependencies
+ */
+var React = require( 'react/addons' );
+
+/**
+ * Internal dependencies
+ */
+var CommentList = require( '../commentList/commentList.jsx' ),
+	CommentForm = require( '../commentForm/commentForm.jsx' );
 
 var Comments = React.createClass({
 	loadCommentsFromServer: function() {

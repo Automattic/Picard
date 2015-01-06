@@ -1,4 +1,12 @@
-var page = require( 'page' );
+/**
+ * External dependencies
+ */
+var React = require( 'react/addons' ),
+	page = require( 'page' );
+
+/**
+ * Internal dependencies
+ */
 var Posts = require( './posts' );
 
 jQuery( 'li.page_item a' ).click( function( e ) {

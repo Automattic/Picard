@@ -1,6 +1,14 @@
+/**
+ * External dependencies
+ */
+var React = require( 'react/addons' );
+
+/**
+ * Internal dependencies
+ */
 var PostList = require( '../postList/postList.jsx' );
 
-module.exports = React.createClass({
+Posts = React.createClass({
 	loadPostsFromServer: function() {
 		var postData = JSON.parse( localStorage.getItem( this.props.url ) );
 		console.log( postData );
@@ -45,3 +53,5 @@ module.exports = React.createClass({
 		);
 	}
 });
+
+module.exports = Posts;

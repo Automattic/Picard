@@ -1,7 +1,15 @@
-var page = require( 'page' );
+/**
+ * External dependencies
+ */
+var React = require( 'react/addons' ),
+	page = require( 'page' );
+
+/**
+ * Internal dependencies
+ */
 var Comments = require( '../comments/comments.jsx' );
 
-module.exports = React.createClass({
+Post = React.createClass({
 	handleAdd: function( e ) {
 		e.preventDefault();
 		url = this.props.link;
@@ -29,3 +37,5 @@ module.exports = React.createClass({
 		);
 	}
 });
+
+module.exports = Post;
