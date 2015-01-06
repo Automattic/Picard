@@ -1,7 +1,16 @@
+/**
+ * External dependencies
+ */
+var React = require( 'react/addons' );
+
+/**
+ * Internal dependencies
+ */
 var Post = require( '../post/post.jsx' );
+
 var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
-module.exports = React.createClass({
+PostList = React.createClass({
 	render: function() {
 		var postNodes = this.props.data.map( function ( post ) {
 			return (
@@ -17,3 +26,5 @@ module.exports = React.createClass({
 		);
 	}
 });
+
+module.exports = PostList;

@@ -1,3 +1,8 @@
+/**
+ * External dependencies
+ */
+var React = require( 'react/addons' );
+
 var commentForm = React.createClass({
 	handleSubmit: function( e ) {
 		e.preventDefault();
