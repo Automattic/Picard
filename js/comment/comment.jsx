@@ -1,3 +1,8 @@
+/**
+ * External dependencies
+ */
+var React = require( 'react/addons' );
+
 var Comment = React.createClass({
 
 	render: function() {

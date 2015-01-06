@@ -3,8 +3,7 @@
 function picard_scripts() {
 	wp_enqueue_style( 'picard-style', get_stylesheet_uri(), '20141230' );
 
-	wp_register_script( 'picard-react', get_template_directory_uri() . '/libs/react-with-addons.min.js', '20141230', true );
-	wp_register_script( 'picard-script', get_template_directory_uri() . '/js/picard.js', array( 'jquery', 'picard-react' ), '20141230', true );
+	wp_register_script( 'picard-script', get_template_directory_uri() . '/js/picard.js', array( 'jquery' ), '20150106', true );
 
 	wp_enqueue_script( 'picard-script' );
 }
