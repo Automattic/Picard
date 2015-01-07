@@ -8,6 +8,9 @@ var React = require( 'react/addons' );
  */
 var Comment = require( '../comment/comment.jsx' );
 
+/**
+ * Renders list of comments
+ */
 var CommentList = React.createClass({
 
 	render: function() {

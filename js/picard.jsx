@@ -9,6 +9,9 @@ var React = require( 'react/addons' ),
  */
 var Posts = require( './posts' );
 
+/**
+ * A quick and dirty way of hijacking any clicks on the navigation and passing the requests to our router
+ */
 jQuery( 'li.page_item a' ).click( function( e ) {
 	e.preventDefault();
 	var url = jQuery( this ).attr('href');
@@ -16,6 +19,12 @@ jQuery( 'li.page_item a' ).click( function( e ) {
 	page( url );
 });
 
+/**
+ * The routing of what is effectively the site index
+ * @todo Move routing into its own component
+ * @todo Don't fire .render when route changes
+ * @todo Write more comprehensive routing based on permalink structure of blog
+ */
 page( '/', function() {
 	React.render(
 		<Posts url="/wp-json/posts" />,
@@ -23,6 +32,10 @@ page( '/', function() {
 	);
 });
 
+/**
+ * Post link route
+ * @todo As above
+ */
 page( '/:year/:month/:day/:slug', function(ctx, next) {
 	var slug = ctx.params.slug;
 	url = "/wp-json/posts/?filter[name]=" + slug;
@@ -32,6 +45,10 @@ page( '/:year/:month/:day/:slug', function(ctx, next) {
 	);
 });
 
+/**
+ * Other link route
+ * @todo As above
+ */
 page( '*', function(ctx, next ) {
 	var slug = ctx.pathname;
 	if(slug.substr(-1) == '/') {

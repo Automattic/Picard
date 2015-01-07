@@ -46,7 +46,7 @@ class Picard_API_Comments {
 			'comment_author'       => $_POST['comment_author'],
 			'comment_author_email' => $_POST['comment_author_email'],
 			'comment_author_url'   => $_POST['comment_author_url'],
-			'comment_content'      => $_POST['content']['rendered'],
+			'comment_content'      => $_POST['content'],
 			'comment_author_IP'    => $_SERVER['REMOTE_ADDR'],
 		);
 		// error_log( print_r( $commentdata, true ) );

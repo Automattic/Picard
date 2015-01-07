@@ -9,6 +9,9 @@ var React = require( 'react/addons' ),
  */
 var Comments = require( '../comments/comments.jsx' );
 
+/**
+ * Renders post
+ */
 Post = React.createClass({
 	handleAdd: function( e ) {
 		e.preventDefault();

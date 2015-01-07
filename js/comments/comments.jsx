@@ -9,6 +9,9 @@ var React = require( 'react/addons' );
 var CommentList = require( '../commentList/commentList.jsx' ),
 	CommentForm = require( '../commentForm/commentForm.jsx' );
 
+/**
+ * Handles getting of comments from the server and posting of comments to the server
+ */
 var Comments = React.createClass({
 	loadCommentsFromServer: function() {
 		var repliesLink = '/wp-json/posts/' + this.props.postID + '/comments/';

@@ -10,6 +10,9 @@ var Post = require( '../post/post.jsx' );
 
 var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
+/**
+ * Renders list of posts
+ */
 PostList = React.createClass({
 	render: function() {
 		var postNodes = this.props.data.map( function ( post ) {

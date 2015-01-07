@@ -3,6 +3,9 @@
  */
 var React = require( 'react/addons' );
 
+/**
+ * Renders comment
+ */
 var Comment = React.createClass({
 
 	render: function() {

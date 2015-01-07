@@ -8,6 +8,9 @@ var React = require( 'react/addons' );
  */
 var PostList = require( '../postList/postList.jsx' );
 
+/**
+ * Handles getting of posts from the server
+ */
 Posts = React.createClass({
 	loadPostsFromServer: function() {
 		var postData = JSON.parse( localStorage.getItem( this.props.url ) );
@@ -20,12 +23,12 @@ Posts = React.createClass({
 				dataType: 'json',
 				success: function(data) {
 					if ( data.constructor !== Array ) {
-						title = data.title.rendered;
+						title = data.title;
 						data = [ data ];
 						document.title = title;
 					}
 					if ( this.props.url.indexOf('filter[name]') >= 0 ) {
-						document.title = data[0].title.rendered;
+						document.title = data[0].title;
 					}
 					localStorage.setItem( this.props.url, JSON.stringify( data ) );
 					this.setState({data: data});

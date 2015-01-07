@@ -3,6 +3,9 @@
  */
 var React = require( 'react/addons' );
 
+/**
+ * Renders comment form
+ */
 var commentForm = React.createClass({
 	handleSubmit: function( e ) {
 		e.preventDefault();
@@ -13,8 +16,10 @@ var commentForm = React.createClass({
 		if ( !text || !author ) {
 			return;
 		}
-		this.props.onCommentSubmit({comment_author: author, comment_author_email: emailAddress, comment_author_url: website, content: {rendered: text} });
+		this.props.onCommentSubmit({comment_author: author, comment_author_email: emailAddress, comment_author_url: website, content: text });
 		this.refs.author.getDOMNode().value = '';
+		this.refs.emailAddress.getDOMNode().value = '';
+		this.refs.website.getDOMNode().value = '';
 		this.refs.text.getDOMNode().value = '';
 	},
 	render: function() {
