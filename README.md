@@ -11,3 +11,5 @@ If you want to start developing with this theme, you'll need to:
 1. Clone this repo to your computer (e.g. `git clone git@github.com:Automattic/Picard.git`)
 1. Run `npm install` to install the node dependencies
 1. Run `gulp js` to compile the JavaScript
+
+If `gulp js` complains that the command is not found, make sure it's installed globally with `sudo npm install -g gulp`. Then run `gulp js` again.
