@@ -4,7 +4,7 @@ Picard is a starter theme for WordPress that makes use of [React](http://faceboo
 
 ## Getting Started
 
-You can run this theme right away by switching to the `production` branch and cloning it or downloading it to your computer. You'll just need to download and activate the WP-API plugin.
+You can run this theme right away by [downloading the compiled version of the theme](http://picardtheme.com/wp-content/uploads/2015/01/picard.zip). You'll just need to download, install and activate the WP-API plugin by following [these instructions](https://github.com/WP-API/WP-API/tree/master#installation).
 
 If you want to start developing with this theme, you'll need to:
 
