@@ -1,2 +1,7 @@
-node_modules
+# Files
 js/picard.js
+*.css.map
+
+# Folders
+node_modules
+.sass-cache
