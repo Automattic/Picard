@@ -12,7 +12,7 @@ add_action( 'wp_enqueue_scripts', 'picard_scripts' );
 function get_json( $_post ) {
 	$counter;
 	foreach ( $_post as $post ) {
-		$_post['post_class'] = implode( ' ', get_post_class( $_post['id'] ) );
+		$_post['post_class'] = implode( ' ', get_post_class( $_post['ID'] ) );
 		$counter++;
 	}
 	// error_log( print_r( $_post, true ) );
