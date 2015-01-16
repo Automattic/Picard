@@ -33,7 +33,7 @@ Post = React.createClass({
 					</div>
 				</header>
 
-				<div className="entry-content" dangerouslySetInnerHTML={{__html: this.props.content}} />
+				<div className="entry-content">dangerouslySetInnerHTML={{__html: this.props.content.rendered}} />
 
 				<Comments postID={ this.props.id } />
 			</article>
