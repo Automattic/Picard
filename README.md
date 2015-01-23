@@ -1,6 +1,6 @@
 # Picard
 
-Picard is a prototype of WordPress theme that makes use of [React](http://facebook.github.io/react/) and the new [WP-API](http://wp-api.org/) which, at some point, will be going into WordPress core.
+Picard is a prototype WordPress theme that makes use of [React](http://facebook.github.io/react/) and the new [WP-API](http://wp-api.org/) which, at some point, will be going into WordPress core.
 
 ## Getting Started
 
