@@ -6,7 +6,9 @@ var React = require( 'react' );
 /**
  * Internal dependencies
  */
-
+var	SiteTitle = require( 'site-title' ),
+	SiteDescription = require( 'site-description' ),
+	SiteNavigation = require( 'site-navigation' );
 
 /**
  * 
@@ -20,14 +22,11 @@ module.exports = React.createClass( {
 		return (
 			<header id="masthead" className="site-header" role="banner">
 				<div className="site-branding">
-					<h1 className="site-title">site title</h1>
-					<h2 className="site-description">site description</h2>
+					<SiteTitle />
+					<SiteDescription />
 				</div>
 
-				<nav id="site-navigation" className="main-navigation" role="navigation">
-					<button className="menu-toggle" aria-controls="menu" aria-expanded="false">menu button</button>
-					menu
-				</nav>
+				<SiteNavigation />
 			</header>
 		);
 	}

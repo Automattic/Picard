@@ -1,4 +1,4 @@
-/**
+ /**
  * External dependencies
  */
 var React = require( 'react' );
