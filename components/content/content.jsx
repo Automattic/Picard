@@ -1,27 +1,60 @@
 /**
  * External dependencies
  */
-var React = require( 'react' ),
-	WP = require( 'wordpress-rest-api' );;
+var React = require( 'react/addons' );
 
 /**
  * Internal dependencies
  */
-var Loop = require( 'loop' );
+var Loop = require( './loop/loop.jsx' );
 
 /**
- * 
+ * Handles getting of posts from the server
  */
-module.exports = React.createClass( {
+Content = React.createClass({
+	loadPostsFromServer: function() {
+		var postData = JSON.parse( localStorage.getItem( this.props.url ) );
+		console.log( postData );
+		if ( postData ) {
+			this.setState({data: postData});
+		} else {
+			jQuery.ajax({
+				url: this.props.url,
+				dataType: 'json',
+				success: function(data) {
+					if ( data.constructor !== Array ) {
+						title = data.title;
+						data = [ data ];
+						document.title = title;
+					}
+					if ( this.props.url.indexOf('filter[name]') >= 0 ) {
+						document.title = data[0].title;
+					}
+					localStorage.setItem( this.props.url, JSON.stringify( data ) );
+					this.setState({data: data});
+				}.bind(this),
+				error: function(xhr, status, err) {
+					console.error(this.props.url, status, err.toString());
+				}.bind(this)
+			});
+		}
+	},
+	getInitialState: function() {
+		return {data: []};
+	},
+	componentDidMount: function() {
+		this.loadPostsFromServer();
+	},
+	componentDidUpdate: function(prevProps, prevState) {
+		if( prevProps !== this.props ) {
+			this.loadPostsFromServer();
+		}
+	},
 	render: function() {
 		return (
-			<div id="content" className="site-content">
-				<div id="primary" className="content-area">
-					<main id="main" className="site-main" role="main">
-						<Loop />
-					</main>
-				</div>
-			</div>
+			<Loop data={this.state.data} />
 		);
 	}
-} );
+});
+
+module.exports = Content;

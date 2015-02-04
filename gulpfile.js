@@ -11,12 +11,12 @@ var autoprefixer = require( 'gulp-autoprefixer' ),
 	watchify = require( 'watchify' );
 
 gulp.task( 'react', function() {
-	return gulp.src( 'js/picard.jsx' )
+	return gulp.src( 'components/picard.jsx' )
 		.pipe( react() )
 		.pipe( gulp.dest( 'js' ) );
 });
 
-var bundler = browserify( './js/picard.jsx' );
+var bundler = browserify( './components/picard.jsx' );
 bundler.transform( reactify );
 
 gulp.task( 'js', bundle );
@@ -29,7 +29,7 @@ function bundle() {
 			// .pipe( buffer() )
 			// .pipe( sourcemaps.init( { loadMaps: true } ) )
 			// .pipe( sourcemaps.write( './' ) )
-		.pipe( gulp.dest( './js' ) );
+		.pipe( gulp.dest( './components' ) );
 }
 
 gulp.task('sass', function () {
