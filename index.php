@@ -1,9 +1,75 @@
-<?php get_header(); ?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-			<p>Loading&hellip;</p>
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	<?php wp_head(); /* ?>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/libs/react.min.js'; ?>"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/libs/JSXTransformer.js'; ?>"></script>
+	<script type="text/jsx" src="<?php echo get_template_directory_uri() . '/js/picard.js'; ?>"></script>
+	*/ ?>
+</head>
+<body <?php body_class(); ?>>
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', '_s' ); ?></a>
 
-<?php get_footer(); ?>
+	<header id="masthead" class="site-header" role="banner">
+		<div class="site-branding">
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		</div>
+
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<button class="menu-toggle"><?php _e( 'Primary Menu', '_s' ); ?></button>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+		</nav><!-- #site-navigation -->
+	</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
+		<div id="primary" class="content-area">
+			<main id="main" class="site-main" role="main">
+
+				<?php if ( have_posts() ) : ?>
+
+					<?php /* Start the Loop */ ?>
+					<?php while ( have_posts() ) : the_post(); ?>
+
+						<?php
+							/* Include the Post-Format-specific template for the content.
+							 * If you want to override this in a child theme, then include a file
+							 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+							 */
+							get_template_part( 'content', get_post_format() );
+						?>
+
+					<?php endwhile; ?>
+
+					<?php the_posts_navigation(); ?>
+
+				<?php else : ?>
+
+					<?php get_template_part( 'content', 'none' ); ?>
+
+				<?php endif; ?>
+
+			</main><!-- #main -->
+		</div><!-- #primary -->
+	</div><!-- #content -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info">
+			<a href="<?php echo esc_url( __( 'http://wordpress.org/', '_s' ) ); ?>"><?php printf( __( 'Proudly powered by %s', '_s' ), 'WordPress' ); ?></a>
+			<span class="sep"> | </span>
+			<?php printf( __( 'Theme: %1$s by %2$s.', '_s' ), '_s', '<a href="http://automattic.com/" rel="designer">Automattic</a>' ); ?>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<?php wp_footer(); ?>
+
+</body>
+</html>
