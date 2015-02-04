@@ -11,7 +11,7 @@ var React = require( 'react' );
 /**
  * 
  */
-module.exports = React.createClass( {
+Footer = React.createClass( {
 	componentWillMount: function() {},
 	componentDidMount: function() {},
 	componentWillUnmount: function() {},
@@ -28,3 +28,5 @@ module.exports = React.createClass( {
 		);
 	}
 } );
+
+module.exports = Footer;
