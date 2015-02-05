@@ -626,10 +626,10 @@ input[type="submit"]:active {
 5.1 Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue;
+  color: #a72b3e;
 }
 a:visited {
-  color: royalblue;
+  color: #a72b3e;
 }
 a:hover, a:focus, a:active {
   color: midnightblue;
@@ -683,5 +683,3 @@ a:hover, a:focus, a:active {
   width: auto;
   z-index: 100000;
 }
-
-/*# sourceMappingURL=style.css.map */
