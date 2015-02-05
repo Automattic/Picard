@@ -16,6 +16,7 @@
 	}
 }
 
-.clearfix {
+.entry-content,
+.comment-content {
 	@include clearfix;
 }
