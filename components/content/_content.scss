@@ -1,17 +1,17 @@
-.example-enter {
+.picard-enter {
   opacity: 0.01;
   transition: opacity .5s ease-in;
 }
 
-.example-enter.example-enter-active {
+.picard-enter.picard-enter-active {
   opacity: 1;
 }
 
-.example-leave {
+.picard-leave {
   opacity: 1;
   transition: opacity .5s ease-in;
 }
 
-.example-leave.example-leave-active {
+.picard-leave.picard-leave-active {
   opacity: 0.01;
 }
