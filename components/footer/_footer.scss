@@ -1,0 +1,22 @@
+.site-info {
+	background-color: $color__text--primary;
+	color: #fff;
+	font-size: 13px;
+	line-height: (21/13);
+	text-align: center;
+	padding: 12px 24px;
+}
+
+.site-info a {
+	border-bottom: 1px solid transparent;
+	color: #fff;
+}
+
+.site-info a:hover {
+	border-bottom: 1px solid #fff;
+}
+
+.site-info a:hover,
+.site-info a:focus {
+	color: #fff;
+}
