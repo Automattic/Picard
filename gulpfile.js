@@ -3,12 +3,14 @@ var autoprefixer = require( 'gulp-autoprefixer' ),
 	buffer = require( 'vinyl-buffer' ),
 	gulp = require( 'gulp' ),
 	gutil = require( 'gulp-util' ),
+	notify = require( 'gulp-notify' ),
 	reactify = require( 'reactify' ),
 	sass = require('gulp-ruby-sass'),
 	source = require( 'vinyl-source-stream' ),
 	sourcemaps = require( 'gulp-sourcemaps' ),
 	uglify = require( 'gulp-uglify' ),
-	watchify = require( 'watchify' );
+	watchify = require( 'watchify' ),
+	watch = require( 'gulp-watch' );
 
 gulp.task( 'react', function() {
 	return gulp.src( 'components/picard.jsx' )
@@ -51,6 +53,22 @@ gulp.task( 'autoprefixer', function () {
 	} ) )
 	.pipe( sourcemaps.write() )
 	.pipe(gulp.dest( '' ) );
+});
+
+// Styles
+gulp.task('styles', function() {
+  return gulp.src('components/style.scss')
+	.pipe( sass() )
+	.pipe( autoprefixer( 'last 3 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4' ) )
+	// .pipe( minifycss() )
+	.pipe( gulp.dest( './' ) )
+	.pipe( notify( { message: 'Styles task complete' } ) );
+});
+
+// Watcher
+gulp.task( 'watch', function() {
+	// Watch .scss files
+	gulp.watch('components/**/*.scss', ['styles']);
 });
 
 
