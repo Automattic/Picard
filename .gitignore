@@ -5,3 +5,5 @@ picard.js
 # Folders
 node_modules
 .sass-cache
+
+*.codekit
