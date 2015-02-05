@@ -3,6 +3,7 @@
 // ==========================================================================
 a {
 	color: $color__link;
+	text-decoration: none;
 
 	&:visited {
 		color: $color__link--visited;
