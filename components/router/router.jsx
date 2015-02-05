@@ -21,7 +21,7 @@ var Router = React.createClass({
 
 		page( '/:year/:month/:day/:slug', function ( ctx ) {
 			var slug = ctx.params.slug;
-			url = "/wp-json/posts/?filter[name]=" + slug;
+			var url = "/wp-json/posts/?filter[name]=" + slug;
 			self.setState({ component: <Content url={url} /> });
 		});
 
