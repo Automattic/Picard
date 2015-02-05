@@ -1,18 +1,15 @@
 // ==========================================================================
 // Links
 // ==========================================================================
-
-@include section("Links", sub);
-
 a {
-	color: royalblue;
+	color: $color__link;
 
 	&:visited {
-		color: purple;
+		color: $color__link--visited;
 	}
 	&:hover,
 	&:focus,
 	&:active {
-		color: midnightblue;
+		color: $color__link--hover;
 	}
 }

@@ -12,7 +12,7 @@ input,
 select,
 textarea {
 	color: map-get($root-font, color);
-	font-family: $sans;
+	font-family: $open-sans;
 	font-size: map-get($root-font, font-size) * 1px;
 	line-height: map-get($root-font, line-height);
 }
@@ -24,10 +24,12 @@ h4,
 h5,
 h6 {
 	clear: both;
+	font-family: $montserrat;
+	font-weight: 700;
 }
 
 p {
-	margin-bottom: 1.5em;
+	margin: 0 0 24px;
 }
 
 b,
@@ -43,37 +45,66 @@ i {
 }
 
 blockquote {
-	margin: 1em 1.5em;
-	font-size: em(25);
+	border-left: 4px solid $color__border--primary;
+	color: $color__text--secondary;
+	font-size: 19px;
 	font-style: italic;
+	line-height: (30/19);
+	margin: 0 0 24px;
+	padding-left: 20px;
+}
+
+blockquote p {
+	margin-bottom: 24px;
+}
+
+blockquote > p:last-child {
+	margin-bottom: 0;
+}
+
+blockquote cite,
+blockquote small {
+	color: $color__border--secondary;
+	font-size: 13px;
+	font-family: $open-sans;
+	line-height: (21/13);
 }
 
 address {
-	margin: 0 0 1.5em;
-}
-
-pre {
-	background: $pre__background;
-	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 15px;
-	font-size: 1.5rem;
-	line-height: 1.6;
-	margin-bottom: 1.6em;
-	max-width: 100%;
-	overflow: auto;
-	padding: 1.6em;
+	font-style: italic;
+	margin: 0 0 24px;
 }
 
 code,
 kbd,
 tt,
-var {
-	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+var,
+samp,
+pre {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre {
+	background: $pre__background;
+	background-color: rgba(0, 0, 0, 0.01);
+	border: 1px solid $color__border--primary;
+	line-height: (18/16);
+	margin-bottom: 24px;
+	max-width: 100%;
+	overflow: auto;
+	padding: 6px;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
 }
 
 abbr,
 acronym {
-	border-bottom: 1px dotted #666;
+	border-bottom: 1px dotted $color__border--primary;
 	cursor: help;
 }
 

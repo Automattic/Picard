@@ -1,0 +1,114 @@
+// ==========================================================================
+// Elements
+// ==========================================================================
+
+hr {
+	background-color: $color__border--primary;
+	border: 0;
+	height: 1px;
+	margin-bottom: 24px;
+}
+
+ul,
+ol {
+	margin: 0 0 24px 20px;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+}
+
+dl {
+	margin-bottom: 24px;
+}
+
+dt {
+	font-weight: $bold;
+}
+
+dd {
+	margin: 0 0 24px;
+}
+
+table,
+th,
+td {
+	border: 1px solid $color__border--primary;
+}
+
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+	border-width: 1px 0 0 1px;
+	margin: 0 0 24px;
+	table-layout: fixed; /* Prevents HTML tables from becoming too wide */
+	width: 100%;
+}
+
+caption,
+th,
+td {
+	font-weight: normal;
+	text-align: left;
+}
+
+th {
+	border-width: 0 1px 1px 0;
+	font-weight: $bold;
+}
+
+td {
+	border-width: 0 1px 1px 0;
+}
+
+th, td {
+	padding: 6px;
+}
+
+img {
+	-ms-interpolation-mode: bicubic;
+	border: 0;
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+figure {
+	margin: 0;
+}
+
+del {
+	opacity: 0.8;
+}
+
+/* Placeholder text color -- selectors need to be separate to work. */
+
+::-webkit-input-placeholder {
+	color: $color__text--secondary;
+	font-family: $open-sans;
+}
+
+:-moz-placeholder {
+	color: $color__text--secondary;
+	font-family: $open-sans;
+}
+
+::-moz-placeholder {
+	color: $color__text--secondary;
+	font-family: $open-sans;
+	opacity: 1; /* Since FF19 lowers the opacity of the placeholder by default */
+}
+
+:-ms-input-placeholder {
+	color: $color__text--secondary;
+	font-family: $open-sans;
+}
