@@ -5,17 +5,41 @@
 .alignleft {
 	display: inline;
 	float: left;
-	margin-right: 1.5em;
 }
 
 .alignright {
 	display: inline;
 	float: right;
-	margin-left: 1.5em;
 }
 
 .aligncenter {
 	clear: both;
 	display: block;
 	margin: 0 auto;
+}
+
+blockquote.alignleft,
+.wp-caption.alignleft,
+img.alignleft {
+	margin: 6px 24px 24px 0;
+}
+
+blockquote.alignright,
+.wp-caption.alignright,
+img.alignright {
+	margin: 6px 0 24px 24px;
+}
+
+blockquote.aligncenter,
+.wp-caption.aligncenter,
+img.aligncenter {
+	clear: both;
+	margin-top: 6px;
+	margin-bottom: 24px;
+}
+
+.wp-caption.alignleft,
+.wp-caption.alignright,
+.wp-caption.aligncenter {
+	margin-bottom: 18px;
 }
