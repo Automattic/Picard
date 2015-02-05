@@ -22,7 +22,7 @@ Loop = React.createClass({
 		});
 		return (
 			<div>
-				<ReactCSSTransitionGroup transitionName="example">
+				<ReactCSSTransitionGroup transitionName="picard">
 					{postNodes}
 				</ReactCSSTransitionGroup>
 			</div>

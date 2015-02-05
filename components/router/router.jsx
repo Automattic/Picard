@@ -15,17 +15,17 @@ var Router = React.createClass({
 		
 		var self = this;
 
-		page('/', function ( ctx ) {
+		page( '/', function ( ctx ) {
 			self.setState({ component: <Content url="/wp-json/posts" /> });
 		});
 
-		page('/:year/:month/:day/:slug', function ( ctx ) {
+		page( '/:year/:month/:day/:slug', function ( ctx ) {
 			var slug = ctx.params.slug;
 			url = "/wp-json/posts/?filter[name]=" + slug;
 			self.setState({ component: <Content url={url} /> });
 		});
 
-		page('*', function ( ctx ) {
+		page( '*', function ( ctx ) {
 			var slug = ctx.pathname;
 			if(slug.substr(-1) == '/') {
 				slug = slug.substr(0, slug.length - 1);
