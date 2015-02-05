@@ -2,13 +2,13 @@
 // Typography variables
 // ==========================================================================
 
-$normal: normal; // Change these values when using custom fonts
-$bold: bold; // For example, bold could change to 400;
+$normal: 400; // Change these values when using custom fonts
+$bold: 600; // For example, bold could change to 400;
 
 $root-font:(
-	color: #404040,
+	color: $color__text--primary,
 	font-size: 16,
-	line-height: 1.6
+	line-height: 1.5
 );
 
 $pre__background: #eee;
@@ -21,7 +21,8 @@ $mark__background: #fff9c0;
 $monospace: 'courier new', monospace;
 $serif: Georgia, "Times New Roman", Times, serif;
 $sans: Helvetica, Arial, sans-serif;
-// $open-sans: 'Open Sans', $sans; // 300 400 400i 700 700i
+$open-sans: 'Open Sans', $sans; // 300 400 400i 700 700i
+$montserrat: 'Montserrat', $sans;
 
 // Icons
 // $dashicons: 'Dashicons';

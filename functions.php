@@ -1,4 +1,59 @@
 <?php
+/**
+ * Register Open Sans Google fonts for Picard.
+ *
+ * @return string
+ */
+function picard_open_sans_font_url() {
+	$open_sans_font_url = '';
+
+	/* translators: If there are characters in your language that are not supported
+	 * by Open Sans, translate this to 'off'. Do not translate into your own language.
+	 */
+	if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'picard' ) ) {
+		$subsets = 'latin,latin-ext';
+
+		/* translators: To add an additional Open Sans character subset specific to your language,
+		 * translate this to 'greek', 'cyrillic' or 'vietnamese'. Do not translate into your own language.
+		 */
+		$subset = _x( 'no-subset', 'Open Sans font: add new subset (greek, cyrillic, vietnamese)', 'picard' );
+
+		if ( 'cyrillic' == $subset ) {
+			$subsets .= ',cyrillic,cyrillic-ext';
+		} elseif ( 'greek' == $subset ) {
+			$subsets .= ',greek,greek-ext';
+		} elseif ( 'vietnamese' == $subset ) {
+			$subsets .= ',vietnamese';
+		}
+
+		$query_args = array(
+			'family' => urlencode( 'Open Sans:300italic,400italic,600italic,700italic,300,400,600,700' ),
+			'subset' => urlencode( $subsets ),
+		);
+
+		$open_sans_font_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
+	}
+
+	return $open_sans_font_url;
+}
+
+/**
+ * Register Montserrat Google fonts for Picard.
+ *
+ * @return string
+ */
+function picard_montserrat_font_url() {
+	$montserrat_font_url = '';
+
+	/* translators: If there are characters in your language that are not supported
+	   by Montserrat, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'picard' ) ) {
+
+		$montserrat_font_url = add_query_arg( 'family', urlencode( 'Montserrat:400,700' ), "//fonts.googleapis.com/css" );
+	}
+
+	return $montserrat_font_url;
+}
 
 function picard_scripts() {
 	wp_enqueue_style( 'picard-style', get_stylesheet_uri(), '20141230' );
