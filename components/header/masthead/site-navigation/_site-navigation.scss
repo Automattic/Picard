@@ -9,15 +9,14 @@
 	padding: 0;
 	border-bottom: 1px solid #d9d9d9;
 }
+.main-navigation ul.toggle-on {
+	display: block;
+}
 .main-navigation ul ul {
 	padding-left: 24px;
 	margin-top: 12px;
 	margin-bottom: -12px;
 	border-bottom: 0;
-}
-.main-navigation ul ul.toggle-on {
-	display: block;
-	position: relative;
 }
 .main-navigation ul ul.toggle-on:before {
 	content: "";
@@ -58,9 +57,9 @@
 	content: "";
 	display: block;
 	position: absolute;
-	top: 50%;
+	z-index: 1;
+	top: -1px;
 	right: 0;
-	margin-top: -25px;
 	width: 50px;
 	height: 50px;
 	background: #f2f2f2;
