@@ -7,7 +7,8 @@ var React = require( 'react/addons' ),
 /**
  * Internal dependencies
  */
-var Router = require( './router/router.jsx' );
+var Router = require( './router/router.jsx' ),
+	navigation = require( './header/masthead/site-navigation/site-navigation-toggle.js' );
 
 /**
  * A quick and dirty way of hijacking any clicks on the navigation and passing the requests to our router
