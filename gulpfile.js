@@ -29,7 +29,7 @@ function bundle() {
 			// .pipe( buffer() )
 			// .pipe( sourcemaps.init( { loadMaps: true } ) )
 			// .pipe( sourcemaps.write( './' ) )
-		.pipe( gulp.dest( './components' ) );
+		.pipe( gulp.dest( './' ) );
 }
 
 gulp.task('sass', function () {

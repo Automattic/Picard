@@ -3,7 +3,7 @@
 function picard_scripts() {
 	wp_enqueue_style( 'picard-style', get_stylesheet_uri(), '20141230' );
 
-	wp_register_script( 'picard-script', get_template_directory_uri() . '/components/picard.js', array( 'jquery' ), '20150106', true );
+	wp_register_script( 'picard-script', get_template_directory_uri() . '/picard.js', array( 'jquery' ), '20150204', true );
 
 	wp_enqueue_script( 'picard-script' );
 }
