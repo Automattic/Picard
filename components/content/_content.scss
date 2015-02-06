@@ -75,6 +75,8 @@
 .entry-content,
 .entry-summary {
 	padding: 24px;
+	margin: 0 auto;
+	max-width: 620px;
 }
 
 .entry-content > :last-child,
@@ -208,7 +210,7 @@
 .page-content a,
 .comment-content a,
 .pingback .comment-body > a {
-	border-bottom: 1px solid $color__border--primary;
+	border-bottom: 1px solid $color__link--hover;
 }
 
 .entry-content a:hover,
@@ -236,3 +238,108 @@
 	white-space: nowrap;
 }
 
+.page-header {
+	border-bottom: 1px solid $color__border--primary;
+	padding: 12px 24px;
+}
+
+.page-title {
+	font-family: $montserrat;
+	font-size: 19px;
+	line-height: (24/19);
+}
+
+.taxonomy-description {
+	color: $color__text--secondary;
+	margin-top: 6px;
+}
+
+.taxonomy-description a {
+	border-bottom: 1px solid $color__link--hover;
+}
+
+.taxonomy-description a:hover,
+.taxonomy-description a:focus {
+	border-bottom: 0;
+}
+
+.taxonomy-description > :last-child {
+	margin-bottom: 0;
+}
+
+.page-content {
+	background-color: #fff;
+	padding: 7.6923%;
+}
+
+.page-content > :last-child {
+	margin-bottom: 0;
+}
+
+.page-links {
+	clear: both;
+	margin-bottom: 24px;
+}
+
+.page-links a,
+.page-links > span {
+	border: 1px solid $color__text--primary;
+	display: inline-block;
+	font-size: 13px;
+	height: 48px;
+	line-height: (24/13);
+	margin: 0 6px 6px 0;
+	text-align: center;
+	width: 48px;
+}
+
+.page-links a {
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0.3);
+	background-color: $color__text--primary;
+	border-color: $color__text--primary;
+	color: #fff;
+}
+
+.page-links a:hover,
+.page-links a:focus {
+	background-color: $color__text--secondary;
+	border-color: transparent;
+	color: #fff;
+}
+
+.page-links > .page-links-title {
+	border: 0;
+	color: $color__text--secondary;
+	height: auto;
+	margin: 0;
+	padding-right: 12px;
+	width: auto;
+}
+
+.entry-attachment {
+	margin-bottom: 24px;
+}
+
+.type-attachment .entry-title {
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+	word-wrap: break-word;
+}
+
+.entry-caption {
+	color: $color__text--secondary;
+	font-size: 13px;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+	line-height: (24/13);
+	padding-top: 6px;;
+	word-wrap: break-word;
+}
+
+.entry-caption > :last-child {
+	margin-bottom: 0;
+}
