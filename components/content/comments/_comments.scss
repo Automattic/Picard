@@ -1,0 +1,9 @@
+.commentBox {
+	padding: 24px;
+	margin: 0 auto;
+	max-width: 620px;
+}
+
+.commentBox > :last-child {
+	margin-bottom: 0;
+}
