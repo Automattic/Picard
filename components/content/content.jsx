@@ -38,6 +38,9 @@ Content = React.createClass({
 				}.bind(this)
 			});
 		}
+
+		// Set body class
+		document.body.className = this.props.bodyClass;
 	},
 	getInitialState: function() {
 		return {data: []};

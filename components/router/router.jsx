@@ -16,13 +16,13 @@ var Router = React.createClass({
 		var self = this;
 
 		page( '/', function ( ctx ) {
-			self.setState({ component: <Content url="/wp-json/posts" /> });
+			self.setState({ component: <Content url="/wp-json/posts" bodyClass="index" /> });
 		});
 
 		page( '/:year/:month/:day/:slug', function ( ctx ) {
 			var slug = ctx.params.slug;
 			var url = "/wp-json/posts/?filter[name]=" + slug;
-			self.setState({ component: <Content url={url} /> });
+			self.setState({ component: <Content url={url} bodyClass="single" /> });
 		});
 
 		page( '*', function ( ctx ) {
@@ -32,7 +32,7 @@ var Router = React.createClass({
 			}
 			var part = slug.substring(slug.lastIndexOf('/') + 1);
 			var url = "/wp-json/posts/?type[]=page&filter[name]=" + part;
-			self.setState({ component: <Content url={url} /> });
+			self.setState({ component: <Content url={url} bodyClass="page" /> });
 		});
 
 		page.start();
