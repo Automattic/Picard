@@ -2,6 +2,7 @@
 style.css
 picard.js
 *.css.map
+min/picard-min.js
 
 # Folders
 node_modules

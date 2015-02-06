@@ -1,0 +1,111 @@
+/*
+ * Does the same thing as <meta name="viewport" content="width=device-width">,
+ * but in the future W3C standard way. -ms- prefix is required for IE10+ to
+ * render responsive styling in Windows 8 "snapped" views; IE10+ does not honor
+ * the meta tag. See https://core.trac.wordpress.org/ticket/25888.
+ */
+@-ms-viewport {
+	width: device-width;
+}
+
+@viewport {
+	width: device-width;
+}
+
+/**
+ * 12.1 Mobile Large 770px
+ */
+
+@media screen and (min-width: 770px) {
+body,
+button,
+input,
+select,
+textarea {
+	font-size: 20px;
+	line-height: 1.6;
+}
+
+.site-branding {
+ 	padding: 32px;
+}
+
+.site-title {
+	font-size: 29px;
+	line-height: (40/29);
+}
+
+.site-description {
+	font-size: 17px;
+	line-height: (28/17);
+	margin-top: 8px;
+}
+
+.hentry {
+	padding-top: 64px;
+}
+
+.entry-header {
+	padding: 0 32px;
+}
+
+.entry-title {
+	font-size: 50px;
+	line-height: (64/50);
+}
+
+.entry-meta {
+	font-size: 17px;
+	line-height: (28/17)
+}
+
+.entry-content,
+.entry-summary {
+	padding: 32px 32px 64px;
+	max-width: 770px;
+}
+
+.entry-content h1,
+.entry-summary h1,
+.page-content h1,
+.comment-content h1 {
+	font-size: 41px;
+	line-height: (56/41);
+}
+
+.entry-content h2,
+.entry-summary h2,
+.page-content h2,
+.comment-content h2 {
+	font-size: 35px;
+	line-height: (48/35);
+}
+
+.entry-content h3,
+.entry-summary h3,
+.page-content h3,
+.comment-content h3 {
+	font-size: 29px;
+	line-height: (40/29);
+}
+
+.entry-content h4,
+.entry-summary h4,
+.page-content h4,
+.comment-content h4 {
+	font-size: 24px;
+	line-height: (32/24);
+}
+
+.entry-content h5,
+.entry-content h6,
+.entry-summary h5,
+.entry-summary h6,
+.page-content h5,
+.page-content h6,
+.comment-content h5,
+.comment-content h6 {
+	font-size: 20px;
+	line-height: (24/20);
+}
+}
