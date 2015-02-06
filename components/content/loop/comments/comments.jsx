@@ -53,8 +53,8 @@ var Comments = React.createClass({
 	},
 	render: function() {
 		return (
-			<div className="commentBox">
-				<h1>Comments</h1>
+			<div id="comments" className="comments-area">
+				<h2 className="comments-title">Comments</h2>
 				<CommentList data={this.state.data} />
 				<CommentForm onCommentSubmit={this.handleCommentSubmit} />
 			</div>

@@ -20,9 +20,9 @@ var CommentList = React.createClass({
 			);
 		});
 		return (
-			<div>
+			<ol className="comment-list">
 				{commentNodes}
-			</div>
+			</ol>
 		);
 	}
 
