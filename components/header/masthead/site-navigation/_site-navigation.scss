@@ -45,6 +45,49 @@
 	padding-right: 62px;
 }
 
+/* Menu Toogle */
+.menu-toggle {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 73px;
+	height: 72px;
+	background: #fff;
+	border-left: 1px solid #d9d9d9;
+	color: #000;
+	text-align: center;
+}
+.menu-toggle:before {
+	content: "\f419";
+	height: 24px;
+	width: 16px;
+	color: inherit;
+	font-size: 16px;
+	line-height: 24px;
+}
+.menu-toggle:hover,
+.menu-toggle:focus,
+.menu-toggle:active {
+	background: #f2f2f2;
+	color: #06973b;
+}
+.menu-toggle.toggle-on,
+.menu-toggle.toggle-on:focus {
+	background: #f2f2f2;
+	color: #000;
+}
+.menu-toggle.toggle-on:hover,
+.menu-toggle.toggle-on:active {
+	color: #06973b;
+}
+.menu-toggle.toggle-on:before {
+	content: "\f405";
+	height: 32px;
+	width: 32px;
+	font-size: 32px;
+	line-height: 32px;
+}
+
 /* Menu Description */
 .menu-item-description {
 	display: block;
