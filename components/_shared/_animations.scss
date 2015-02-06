@@ -1,0 +1,39 @@
+/* Enter */
+.picard-enter {
+	-webkit-animation: scaleUp .7s ease both;
+	animation: scaleUp .7s ease both;
+}
+@-webkit-keyframes scaleUp {
+	from {
+		opacity: 0;
+		-webkit-transform: scale(0.8);
+	}
+}
+@keyframes scaleUp {
+	from {
+		opacity: 0;
+		-webkit-transform: scale(0.8);
+		transform: scale(0.8);
+	}
+}
+
+/* Leave */
+.picard-leave {
+	-webkit-animation: scaleDown .7s ease both;
+	animation: scaleDown .7s ease both;
+}
+@-webkit-keyframes scaleDown {
+	from { }
+	to {
+		opacity: 0;
+		-webkit-transform: scale(0.8);
+	}
+}
+@keyframes scaleDown {
+	from { }
+	to {
+		opacity: 0;
+		-webkit-transform: scale(0.8);
+		transform: scale(0.8);
+	}
+}

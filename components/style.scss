@@ -103,7 +103,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 9.0 Header
 --------------------------------------------------------------*/
-
 @import "header/masthead/masthead";
 @import "header/masthead/site-title/site-title";
 @import "header/masthead/site-description/site-description";
@@ -117,11 +116,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 10.1 Comments
 --------------------------------------------------------------*/
-
 @import "content/comments/comments";
 
 /*--------------------------------------------------------------
 11.0 Footer
 --------------------------------------------------------------*/
-
 @import "footer/footer";
+
+/*--------------------------------------------------------------
+12.0 Animations
+--------------------------------------------------------------*/
+@import "_shared/animations";
