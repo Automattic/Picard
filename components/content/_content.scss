@@ -15,3 +15,224 @@
 .picard-leave.picard-leave-active {
   opacity: 0.01;
 }
+
+.hentry {
+	padding-top: 24px;
+	position: relative;
+}
+
+.hentry.has-post-thumbnail {
+	padding-top: 0;
+}
+
+.hentry + .hentry {
+	border-top: 1px solid $color__border--primary;
+}
+
+.post-thumbnail {
+	border: 0;
+	display: block;
+}
+
+.post-thumbnail img {
+	display: block;
+	margin: 0 auto;
+}
+
+.entry-header {
+	padding: 0 24px;
+}
+
+.entry-title {
+	font-size: 33px;
+	line-height: (42/33);
+	margin: 0;
+	text-align: center;
+}
+
+.entry-meta {
+	color: $color__text--secondary;
+	font-size: 13px;
+	line-height: (21/13);
+	padding: 24px 24px 0;
+	text-align: center;
+}
+
+.entry-meta a {
+	border-bottom: 1px solid transparent;
+	color: $color__text--secondary;
+}
+
+.entry-meta a:hover {
+	border-bottom: 1px solid $color__text--primary;
+}
+
+.entry-meta a:hover,
+.entry-meta a:focus {
+	color: $color__text--primary;
+}
+
+.entry-content,
+.entry-summary {
+	padding: 24px;
+}
+
+.entry-content > :last-child,
+.entry-summary > :last-child {
+	margin-bottom: 0;
+}
+
+.entry-content,
+.entry-summary,
+.page-content,
+.comment-content {
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+	word-wrap: break-word;
+}
+
+.entry-content h1,
+.entry-summary h1,
+.page-content h1,
+.comment-content h1 {
+	font-size: 28px;
+	line-height: (36/28);
+}
+
+.entry-content h2,
+.entry-summary h2,
+.page-content h2,
+.comment-content h2 {
+	font-size: 23px;
+	line-height: (30/23);
+}
+
+.entry-content h3,
+.entry-summary h3,
+.page-content h3,
+.comment-content h3 {
+	font-size: 19px;
+	line-height: (24/19);
+}
+
+.entry-content h4,
+.entry-content h5,
+.entry-content h6,
+.entry-summary h4,
+.entry-summary h5,
+.entry-summary h6,
+.page-content h4,
+.page-content h5,
+.page-content h6,
+.comment-content h4,
+.comment-content h5,
+.comment-content h6 {
+	font-size: 16px;
+	line-height: (18/16);
+}
+
+.entry-content h5,
+.entry-summary h5,
+.page-content h5,
+.comment-content h5 {
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+.entry-content h3,
+.entry-summary h3,
+.page-content h3,
+.comment-content h3 {
+	font-weight: 400;
+}
+
+.entry-content > h1:first-child,
+.entry-content > h2:first-child,
+.entry-content > h3:first-child,
+.entry-content > h4:first-child,
+.entry-content > h5:first-child,
+.entry-content > h6:first-child,
+.entry-summary > h1:first-child,
+.entry-summary > h2:first-child,
+.entry-summary > h3:first-child,
+.entry-summary > h4:first-child,
+.entry-summary > h5:first-child,
+.entry-summary > h6:first-child,
+.page-content > h1:first-child,
+.page-content > h2:first-child,
+.page-content > h3:first-child,
+.page-content > h4:first-child,
+.page-content > h5:first-child,
+.page-content > h6:first-child,
+.comment-content > h1:first-child,
+.comment-content > h2:first-child,
+.comment-content > h3:first-child,
+.comment-content > h4:first-child,
+.comment-content > h5:first-child,
+.comment-content > h6:first-child {
+	margin-top: 0;
+}
+
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6,
+.entry-summary h1,
+.entry-summary h2,
+.entry-summary h3,
+.entry-summary h4,
+.entry-summary h5,
+.entry-summary h6,
+.page-content h1,
+.page-content h2,
+.page-content h3,
+.page-content h4,
+.page-content h5,
+.page-content h6,
+.comment-content h1,
+.comment-content h2,
+.comment-content h3,
+.comment-content h4,
+.comment-content h5,
+.comment-content h6 {
+	margin-top: 48px;
+	margin-bottom: 24px;
+}
+
+.entry-content a,
+.entry-summary a,
+.page-content a,
+.comment-content a,
+.pingback .comment-body > a {
+	border-bottom: 1px solid $color__border--primary;
+}
+
+.entry-content a:hover,
+.entry-content a:focus,
+.entry-summary a:hover,
+.entry-summary a:focus,
+.page-content a:hover,
+.page-content a:focus,
+.comment-content a:hover,
+.comment-content a:focus,
+.pingback .comment-body > a:hover,
+.pingback .comment-body > a:focus {
+	border-bottom: 0;
+}
+
+.entry-content a img,
+.entry-summary a img,
+.page-content a img,
+.comment-content a img {
+	display: block;
+}
+
+.entry-content .more-link,
+.entry-summary .more-link:after {
+	white-space: nowrap;
+}
+
