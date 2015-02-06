@@ -108,7 +108,7 @@
 	background: #f2f2f2;
 	border: 1px solid #d9d9d9;
 }
-.dropdown-toggle:after {
+.dropdown-toggle:before {
 	content: "\f431";
 	position: absolute;
 	top: 11px;
@@ -123,11 +123,11 @@
 .dropdown-toggle:active {
 	background: #fff;
 }
-.dropdown-toggle:hover:after,
-.dropdown-toggle:focus:after,
-.dropdown-toggle:active:after {
+.dropdown-toggle:hover:before,
+.dropdown-toggle:focus:before,
+.dropdown-toggle:active:before {
 	color: #06973b;
 }
-.dropdown-toggle.toggle-on:after {
+.dropdown-toggle.toggle-on:before {
 	content: "\f432";
 }
