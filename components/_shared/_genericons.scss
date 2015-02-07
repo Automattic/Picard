@@ -1,5 +1,7 @@
 .dropdown-toggle:before,
-.menu-toggle:before, {
+.menu-toggle:before,
+.nav-next a:before,
+.nav-previous a:before {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	display: inline-block;

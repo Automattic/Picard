@@ -1,3 +1,57 @@
 // ==========================================================================
 // Navigation
 // ==========================================================================
+
+.post-navigation {
+	position: fixed;
+	top: 50%;
+	width: 100%;
+	z-index: 4;
+}
+
+.post-navigation .nav-next {
+	float: right;
+	width: 64px;
+}
+
+.post-navigation .nav-previous {
+	float: left;
+	width: 64px;
+}
+
+.post-navigation .nav-next a,
+.post-navigation .nav-previous a {
+	background-color: $color__link;
+	color: #fff;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	height: 64px;
+	width: 64px;
+}
+
+.post-navigation .nav-next a:before,
+.post-navigation .nav-previous a:before {
+	content: "\f431";
+	font-size: 32px;
+	position: absolute;
+}
+
+.post-navigation .nav-previous a:before {
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+	top: 16px;
+	left: 32px;
+
+}
+
+.post-navigation .nav-next a:before {
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+	top: 32px;
+	left: 16px;
+}
