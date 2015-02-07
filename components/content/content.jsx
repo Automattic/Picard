@@ -6,7 +6,8 @@ var React = require( 'react/addons' );
 /**
  * Internal dependencies
  */
-var Loop = require( './loop/loop.jsx' );
+var Loop = require( './loop/loop.jsx' ),
+	entry_thumbnail = require( './entry-thumbnail.js' );
 
 /**
  * Handles getting of posts from the server
@@ -57,6 +58,9 @@ Content = React.createClass({
 		}
 	},
 	render: function() {
+		// Call the single entry function render hack
+		entry_thumbnail();
+
 		// Check if we're just viewing one post, if so, pass the ID down
 		if ( this.state.data.length === 1 ) {
 			singlePostID = this.state.data[0].ID;

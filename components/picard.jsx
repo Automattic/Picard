@@ -8,8 +8,8 @@ var React = require( 'react/addons' ),
  * Internal dependencies
  */
 var Router = require( './router/router.jsx' ),
-    entry_thumbnail = require( './content/entry-thumbnail.js' ),
-	navigation = require( './header/masthead/site-navigation/site-navigation-toggle.js' );
+	navigation = require( './header/masthead/site-navigation/site-navigation-toggle.js' ),
+	entry_thumbnail = require( './content/entry-thumbnail.js' );
 
 /**
  * A quick and dirty way of hijacking any clicks on the navigation and passing the requests to our router
@@ -27,6 +27,8 @@ jQuery( 'li.page_item a' ).click( function( e ) {
 React.render(
 	<Router />, document.getElementById( 'main' )
 );
+
+window.onload = entry_thumbnail;
 
 /**
  * The routing of what is effectively the site index
