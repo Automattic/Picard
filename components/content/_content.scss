@@ -40,8 +40,8 @@
 }
 
 /* Page & Single Entry Thumbnail */
-.page .has-post-thumbnail img,
-.single .has-post-thumbnail img {
+.page .has-post-thumbnail .entry-thumbnail img,
+.single .has-post-thumbnail .entry-thumbnail img {
 	position: absolute;
 	top: 50%;
 	left: 50%;
