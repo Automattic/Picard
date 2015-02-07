@@ -15,9 +15,10 @@ var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
  */
 Loop = React.createClass({
 	render: function() {
+		var context = this.props.context;
 		var postNodes = this.props.data.map( function ( post ) {
 			return (
-				<Hentry key={post.ID} id={post.ID} post_class={post.post_class} link={post.link} title={post.title} date={post.date} content={post.content}/> 
+				<Hentry key={post.ID} id={post.ID} post_class={post.post_class} link={post.link} title={post.title} date={post.date} content={post.content} context={ context } /> 
 			);
 		});
 		return (

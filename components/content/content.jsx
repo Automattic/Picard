@@ -55,7 +55,7 @@ Content = React.createClass({
 	},
 	render: function() {
 		return (
-			<Loop data={this.state.data} />
+			<Loop data={this.state.data} context={ this.props.bodyClass } />
 		);
 	}
 });
