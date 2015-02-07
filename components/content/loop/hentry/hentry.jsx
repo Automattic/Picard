@@ -37,19 +37,39 @@ Hentry = React.createClass({
 			entryContent = '';
 		}
 
+		// Featured image support
+		var entryHeader;
+		if ( this.props.featured_image ) {
+			entryHeader = <div className="entry-thumbnail">
+				<img src={ this.props.featured_image.source } />
+				<header className="entry-header">
+					<h1 className="entry-title">
+						<a onClick={this.handleAdd} href={this.props.link} rel="bookmark">
+							{this.props.title}
+						</a>
+					</h1>
+					<div className="entry-meta">
+						{this.props.date}
+					</div>
+				</header>
+			</div>;
+		} else {
+			entryHeader = <header className="entry-header">
+				<h1 className="entry-title">
+					<a onClick={this.handleAdd} href={this.props.link} rel="bookmark">
+						{this.props.title}
+					</a>
+				</h1>
+				<div className="entry-meta">
+					{this.props.date}
+				</div>
+			</header>;
+		}
+
 		return (
 			<div>
 				<article className={this.props.post_class}>
-					<header className="entry-header">
-						<h1 className="entry-title">
-							<a onClick={this.handleAdd} href={this.props.link} rel="bookmark">
-								{this.props.title}
-							</a>
-						</h1>
-						<div className="entry-meta">
-							{this.props.date}
-						</div>
-					</header>
+					{ entryHeader }
 
 					<ReactCSSTransitionGroup transitionName="picard-content">
 						{ entryContent }
