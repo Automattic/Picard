@@ -45,7 +45,7 @@ ul {
 }
 
 .site-branding {
- 	padding: 32px;
+ 	padding: 32px 64px;
 }
 
 .site-title {
@@ -64,7 +64,9 @@ ul {
 }
 
 .entry-header {
-	padding: 0 32px;
+	padding: 0 64px;
+	margin: 0 auto;
+	max-width: 770px;
 }
 
 .entry-title {
@@ -75,12 +77,14 @@ ul {
 .entry-meta {
 	font-size: 17px;
 	line-height: (28/17);
-	padding: 8px 0 0;
+	margin: 16px auto 0;
+	max-width: 770px;
+	padding: 0 64px;
 }
 
 .entry-content,
 .entry-summary {
-	padding: 32px 32px 64px;
+	padding: 32px 64px 64px;
 	max-width: 770px;
 }
 
@@ -129,7 +133,7 @@ ul {
 }
 
 .comments-area {
-	padding: 32px;
+	padding: 32px 64px;
 	max-width: 770px;
 }
 
@@ -216,14 +220,6 @@ ul {
 .main-navigation .menu {
 	max-width: 770px;
 	margin: 0 auto;
-	padding: 0 32px;
-}
-
-/* Entry Meta & Entry Title */
-.entry-meta,
-.entry-title {
-	max-width: 770px;
-	margin: 0 auto;
-	padding: 0 32px;
+	padding: 0 64px;
 }
 }
