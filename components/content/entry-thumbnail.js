@@ -13,6 +13,8 @@ var entry_thumbnail = function() {
 	}
 	if ( ( $( 'body' ).hasClass( 'page' ) || $( 'body' ).hasClass( 'single' ) ) && $( '.hentry' ).hasClass( 'has-post-thumbnail' ) ) {
 		$( '.entry-thumbnail' ).height( $( window ).height() - site_header_height );
+	} else {
+		$( '.entry-thumbnail' ).css( 'height', '' );
 	}
 
 };
