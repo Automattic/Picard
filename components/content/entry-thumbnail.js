@@ -39,10 +39,6 @@ var entry_thumbnail = ( function( $ ) {
 			} );
 		} );
 
-		$( '.entry-header' ).each( function() {
-			$( this ).css( 'margin-top', - $( this ).outerHeight() / 2 );
-		} );
-
 		if ( ( $( 'body' ).hasClass( 'page' ) || $( 'body' ).hasClass( 'single' ) ) && $( '.hentry' ).hasClass( 'has-post-thumbnail' ) ) {
 
 			entry_thumbnail.height( $( window ).height() - site_header_height );
