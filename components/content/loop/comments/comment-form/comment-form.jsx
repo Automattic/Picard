@@ -25,9 +25,7 @@ var commentForm = React.createClass({
 	render: function() {
 		return (
 			<div id="respond" className="comment-respond js">
-				<h3 id="reply-title" className="comment-reply-title">
-					Leave a reply <small><a rel="nofollow" id="cancel-comment-reply-link">Cancel reply</a></small>
-				</h3>
+				<h3 id="reply-title" className="comment-reply-title">Leave a reply</h3>
 				<form className="comment-form" onSubmit={this.handleSubmit}>
 					<p className="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span className="required">*</span></p>
 					<p className="comment-form-author">
