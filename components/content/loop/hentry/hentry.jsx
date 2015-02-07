@@ -38,7 +38,8 @@ Hentry = React.createClass({
 		}
 
 		// Featured image support
-		var entryHeader;
+		var entryHeader,
+			postClass;
 		if ( this.props.featured_image ) {
 			entryHeader = <div className="entry-thumbnail">
 				<img src={ this.props.featured_image.source } />
@@ -53,6 +54,7 @@ Hentry = React.createClass({
 					</div>
 				</header>
 			</div>;
+			postClass = this.props.post_class + " has-post-thumbnail";
 		} else {
 			entryHeader = <header className="entry-header">
 				<h1 className="entry-title">
@@ -64,11 +66,12 @@ Hentry = React.createClass({
 					{this.props.date}
 				</div>
 			</header>;
+			postClass = this.props.post_class;
 		}
 
 		return (
 			<div>
-				<article className={this.props.post_class}>
+				<article className={ postClass }>
 					{ entryHeader }
 
 					<ReactCSSTransitionGroup transitionName="picard-content">
