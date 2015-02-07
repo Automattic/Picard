@@ -41,8 +41,10 @@ Hentry = React.createClass({
 		var entryHeader,
 			postClass;
 		if ( this.props.featured_image ) {
-			entryHeader = <div className="entry-thumbnail">
-				<img src={ this.props.featured_image.source } />
+			var thumbnailImage = {
+			  backgroundImage: 'url(' + this.props.featured_image.source + ')'
+			};
+			entryHeader = <div className="entry-thumbnail" style={thumbnailImage}>
 				<header className="entry-header">
 					<h1 className="entry-title">
 						<a onClick={this.handleAdd} href={this.props.link} rel="bookmark">
