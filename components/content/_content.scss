@@ -1,3 +1,7 @@
+.site-main {
+	position: relative;
+}
+
 .hentry {
 	padding: 48px 0;
 	position: relative;
@@ -35,6 +39,8 @@
 
 .has-post-thumbnail .entry-header {
 	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
 	z-index: 2;
 }
 
