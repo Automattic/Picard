@@ -40,8 +40,13 @@ Content = React.createClass({
 			});
 		}
 
-		// Set body class
-		document.body.className = this.props.bodyClass;
+		// Set body class if there isn't an animation happening
+		if ( document.body.className.indexOf( 'move' ) > -1 ) {
+			console.log('found it!');
+		} else {
+			console.log("don't found it");
+			document.body.className = this.props.bodyClass;
+		}
 
 		// Scoll to top on page change
 		window.scroll(0,0);

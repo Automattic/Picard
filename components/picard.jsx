@@ -28,8 +28,6 @@ React.render(
 	<Router />, document.getElementById( 'main' )
 );
 
-window.onload = entry_thumbnail;
-
 /**
  * The routing of what is effectively the site index
  * @todo Move routing into its own component

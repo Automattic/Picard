@@ -1,7 +1,8 @@
 /**
  * External dependencies
  */
-var React = require( 'react/addons' );
+var React = require( 'react/addons' ),
+	page = require( 'page' );
 
 /**
  * Internal dependencies
@@ -14,6 +15,20 @@ var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
  * Renders list of posts
  */
 Loop = React.createClass({
+	addMoveRight: function( e ) {
+		var bodyClass = document.body.className;
+		document.body.className = bodyClass + ' move-right';
+	},
+
+	addMoveLeft: function( e ) {
+		var bodyClass = document.body.className;
+		document.body.className = bodyClass + ' move-left';
+	},
+
+	removeMove: function( e ) {
+		document.body.className = 'single';
+	},
+
 	render: function() {
 		var context = this.props.context,
 			showExtra = false,
@@ -22,6 +37,34 @@ Loop = React.createClass({
 		if ( this.props.postID !== 0 && this.props.postID === this.props.data[0].ID ) {
 			showExtra = true;
 		}
+
+		// Detect keydown events for arrow navigation
+		var self = this;
+
+		document.onkeydown = function( e ) {
+			// Left arrow keydown
+			if ( e.keyCode === 37 ) {
+				e.preventDefault();
+				self.removeMove();
+				self.addMoveLeft();
+				var el = document.querySelector('.nav-previous a');
+				var url = el.href;
+				url = url.replace(/^.*\/\/[^\/]+/, '');
+				page( url );
+			}
+
+			// Right arrow keydown
+			if ( e.keyCode === 39 ) {
+				e.preventDefault();
+				self.removeMove();
+				self.addMoveRight();
+				var el = document.querySelector('.nav-next a');
+				var url = el.href;
+				url = url.replace(/^.*\/\/[^\/]+/, '');
+				page( url );
+			}
+		}
+
 		var postNodes = this.props.data.map( function ( post ) {
 
 			// Get next and previous post links
@@ -42,8 +85,8 @@ Loop = React.createClass({
 				</ReactCSSTransitionGroup>
 				<nav className="navigation post-navigation" role="navigation">
 					<div className="nav-links">
-						<div className="nav-next" dangerouslySetInnerHTML={{__html: next}} />
-						<div className="nav-previous" dangerouslySetInnerHTML={{__html: previous}} />
+						<div onMouseEnter={ this.addMoveRight } onMouseOut={ this.removeMove } className="nav-next" dangerouslySetInnerHTML={{__html: next}} />
+						<div onMouseEnter={ this.addMoveLeft } onMouseOut={ this.removeMove } className="nav-previous" dangerouslySetInnerHTML={{__html: previous}} />
 					</div>
 				</nav>
 			</div>
