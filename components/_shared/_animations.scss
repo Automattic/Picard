@@ -1,7 +1,12 @@
 /* Enter */
+// body.single .picard-enter {
+// 	-webkit-animation: scaleUp .7s ease both;
+// 	animation: scaleUp .7s ease both;
+// }
+
 .picard-enter {
-	-webkit-animation: scaleUp .7s ease both;
-	animation: scaleUp .7s ease both;
+	-webkit-animation: scaleUp 0s ease both;
+	animation: scaleUp 0s ease both;
 }
 @-webkit-keyframes scaleUp {
 	from {
@@ -18,9 +23,14 @@
 }
 
 /* Leave */
+// body.single .picard-leave {
+// 	-webkit-animation: scaleDown .7s ease both;
+// 	animation: scaleDown .7s ease both;
+// }
+
 .picard-leave {
-	-webkit-animation: scaleDown .7s ease both;
-	animation: scaleDown .7s ease both;
+	-webkit-animation: scaleDown 0s ease both;
+	animation: scaleDown 0s ease both;
 }
 @-webkit-keyframes scaleDown {
 	from { }

@@ -25,10 +25,11 @@ Loop = React.createClass({
 				<Hentry key={post.ID} id={post.ID} post_class={post.post_class} link={post.link} title={post.title} date={post.date} content={post.content} featured_image={ post.featured_image } context={ context } showExtra={ showExtra } /> 
 			);
 		});
+
 		return (
 			<div>
 				<ReactCSSTransitionGroup transitionName="picard">
-					{postNodes}
+					{ postNodes }
 				</ReactCSSTransitionGroup>
 			</div>
 		);
