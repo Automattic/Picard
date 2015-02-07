@@ -23,7 +23,7 @@ var Comment = React.createClass({
 							</b>
 						</div>
 						<div className="comment-metadata">
-							<time datetime={comment.date}>{comment.date}</time>
+							<time dateTime={comment.date}>{comment.date}</time>
 						</div>
 					</footer>
 					<div className="comment-content" dangerouslySetInnerHTML={{__html: comment.content}} />
