@@ -5,8 +5,10 @@
 // }
 
 .picard-enter {
-	-webkit-animation: scaleUp 0s ease both;
-	animation: scaleUp 0s ease both;
+	// -webkit-animation: scaleUp 0s ease both;
+	animation: slideIn .7s ease both;
+	position: absolute;
+	width: 100%;
 }
 @-webkit-keyframes scaleUp {
 	from {
@@ -22,6 +24,17 @@
 	}
 }
 
+@keyframes slideIn {
+	from {
+		opacity: 0.3;
+		transform: translateX(100%);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
 /* Leave */
 // body.single .picard-leave {
 // 	-webkit-animation: scaleDown .7s ease both;
@@ -29,8 +42,10 @@
 // }
 
 .picard-leave {
-	-webkit-animation: scaleDown 0s ease both;
-	animation: scaleDown 0s ease both;
+	// -webkit-animation: scaleDown 0s ease both;
+	animation: slideOut .7s ease both;
+	position: absolute;
+	width: 100%;
 }
 @-webkit-keyframes scaleDown {
 	from { }
@@ -45,5 +60,16 @@
 		opacity: 0;
 		-webkit-transform: scale(0.8);
 		transform: scale(0.8);
+	}
+}
+
+@keyframes slideOut {
+	from {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	to {
+		opacity: 0.3;
+		transform: translateX(-100%);
 	}
 }
