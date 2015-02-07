@@ -60,7 +60,7 @@ ul {
 }
 
 .hentry {
-	padding-top: 64px;
+	padding: 64px 32px;
 }
 
 .entry-header {
@@ -68,13 +68,14 @@ ul {
 }
 
 .entry-title {
-	font-size: 50px;
-	line-height: (64/50);
+	font-size: 41px;
+	line-height: (56/41);
 }
 
 .entry-meta {
 	font-size: 17px;
-	line-height: (28/17)
+	line-height: (28/17);
+	padding: 8px 32px 0;
 }
 
 .entry-content,
@@ -125,6 +126,89 @@ ul {
 .comment-content h6 {
 	font-size: 20px;
 	line-height: (24/20);
+}
+
+.comments-area {
+	padding: 32px;
+	max-width: 770px;
+}
+
+.comment-list + .comment-respond,
+.comment-navigation + .comment-respond {
+	padding-top: 32px;
+}
+
+.comments-title,
+.comment-reply-title {
+	font-size: 24px;
+	line-height: (32/24);
+}
+
+.comments-title {
+	margin: 0 0 32px;
+}
+
+.comment-list article,
+.comment-list .pingback,
+.comment-list .trackback {
+  	padding: 32px 0;
+}
+
+.comment-author .avatar {
+	height: 32px;
+	margin-right: 16px;
+	width: 32px;
+}
+
+.comment-metadata,
+.pingback .edit-link {
+ 	font-size: 17px;
+ 	line-height: (24/17);
+}
+
+.comment-metadata {
+	margin-bottom: 32px;
+}
+
+.comment-metadata .edit-link {
+	margin-left: 16px;
+}
+
+.pingback .edit-link {
+	margin-left: 16px;
+}
+
+.comment-content ul,
+.comment-content ol {
+	margin: 0 0 32px 28px;
+}
+
+.comment-list .reply {
+	font-size: 17px;
+}
+
+.comment-list .reply a {
+  margin-top: 32px;
+  padding: 16px 32px;
+}
+
+.comment-form {
+  padding-top: 32px;
+}
+
+
+.comment-notes,
+.comment-awaiting-moderation,
+.logged-in-as,
+.form-allowed-tags {
+  color: #666;
+  font-size: 17px;
+  line-height: (28/17);
+  margin-bottom: 32px;
+}
+
+.no-comments {
+  padding-top: 32px;
 }
 
 /* Main Navigation */
