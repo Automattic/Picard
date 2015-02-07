@@ -60,7 +60,7 @@ ul {
 }
 
 .hentry {
-	padding: 64px 32px;
+	padding: 64px 0;
 }
 
 .entry-header {
@@ -75,7 +75,7 @@ ul {
 .entry-meta {
 	font-size: 17px;
 	line-height: (28/17);
-	padding: 8px 32px 0;
+	padding: 8px 0 0;
 }
 
 .entry-content,
@@ -144,7 +144,8 @@ ul {
 	line-height: (32/24);
 }
 
-.comments-title {
+.comments-title,
+.comment-reply-title {
 	margin: 0 0 32px;
 }
 
@@ -188,12 +189,12 @@ ul {
 }
 
 .comment-list .reply a {
-  margin-top: 32px;
-  padding: 16px 32px;
+	margin-top: 32px;
+	padding: 6.5px 13px;
 }
 
 .comment-form {
-  padding-top: 32px;
+	padding-top: 32px;
 }
 
 
@@ -201,10 +202,10 @@ ul {
 .comment-awaiting-moderation,
 .logged-in-as,
 .form-allowed-tags {
-  color: #666;
-  font-size: 17px;
-  line-height: (28/17);
-  margin-bottom: 32px;
+	color: #666;
+	font-size: 17px;
+	line-height: (28/17);
+	margin-bottom: 32px;
 }
 
 .no-comments {
