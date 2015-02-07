@@ -26,6 +26,9 @@ Hentry = React.createClass({
 		page( url );
 	},
 	render: function() {
+		var d = new Date( this.props.date ),
+			formattedDate = d.toDateString();
+
 		// Decide whether or not to render comments and entry-content
 		var comments,
 			content;
@@ -52,7 +55,7 @@ Hentry = React.createClass({
 						</a>
 					</h1>
 					<div className="entry-meta">
-						{this.props.date}
+						{formattedDate}
 					</div>
 				</header>
 			</div>;
@@ -65,7 +68,7 @@ Hentry = React.createClass({
 					</a>
 				</h1>
 				<div className="entry-meta">
-					{this.props.date}
+					{formattedDate}
 				</div>
 			</header>;
 			postClass = this.props.post_class;

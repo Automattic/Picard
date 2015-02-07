@@ -10,7 +10,13 @@ var Comment = React.createClass({
 
 	render: function() {
 		var comment = this.props.comment,
-			author = this.props.comment.author;
+			author = this.props.comment.author,
+			d = new Date( this.props.comment.date ),
+			formattedDate = d.toDateString(),
+			hour = ( d.getHours() < 10 ) ? "0" + d.getHours() : d.getHours(),
+			min = ( d.getMinutes() < 10 ) ? "0" + d.getMinutes() : d.getMinutes(),
+			sec = ( d.getSeconds() < 10 ) ? "0" + d.getSeconds() : d.getSeconds(),
+			formattedTime = [ hour, min, sec ].join( ':' );
 
 		return (
 			<li id={"comment-" + comment.ID}>
@@ -23,7 +29,7 @@ var Comment = React.createClass({
 							</b>
 						</div>
 						<div className="comment-metadata">
-							<time dateTime={comment.date}>{comment.date}</time>
+							<time dateTime={d}>{formattedDate + " " + formattedTime}</time>
 						</div>
 					</footer>
 					<div className="comment-content" dangerouslySetInnerHTML={{__html: comment.content}} />
