@@ -40,8 +40,7 @@
 }
 
 /* Page & Single Entry Thumbnail */
-.page .has-post-thumbnail .entry-thumbnail img,
-.single .has-post-thumbnail .entry-thumbnail img {
+.entry-thumbnail img {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -52,6 +51,13 @@
 	-moz-transform:    translate(-50%, -50%);
 	transform:         translate(-50%, -50%);
 }
+
+
+// It's hacky and it will need to be fixed
+.index .entry-thumbnail {
+	padding: 128px 0;
+}
+
 
 .entry-header {
 	padding: 0 24px;
