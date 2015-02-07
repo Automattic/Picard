@@ -12,7 +12,8 @@ var entry_thumbnail = ( function( $ ) {
 
 			var site_header_height        = $( '.site-header' ).outerHeight(),
 			    entry_thumbnail           = $( '.entry-thumbnail' ),
-			    entry_thumbnail_img       = entry_thumbnail.find( 'img' );
+			    entry_thumbnail_img       = entry_thumbnail.find( 'img' ),
+			    entry_header              = $( '.entry-header' );
 			if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
 				var admin_bar_height      = $( '#wpadminbar' ).outerHeight();
 				site_header_height       += admin_bar_height;
@@ -43,6 +44,8 @@ var entry_thumbnail = ( function( $ ) {
 					}
 				} );
 			} );
+			
+			entry_header.css( 'margin-top', - entry_header.outerHeight() / 2 );
 
 		}
 
