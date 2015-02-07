@@ -47,14 +47,17 @@
 
 /* Menu Toogle */
 .menu-toggle {
+	background-color: transparent;
+	border: 1px solid $color__border--primary;
+	color: $color__link;
 	position: absolute;
 	top: 32px;
 	right: 32px;
 	padding: 0;
 	width: 64px;
 	height: 64px;
-	border: 0;
 }
+
 .menu-toggle:before {
 	content: "\f419";
 	height: 64px;
@@ -63,15 +66,13 @@
 	font-size: 16px;
 	line-height: 64px;
 }
-.menu-toggle.toggle-on,
-.menu-toggle.toggle-on:focus {
-	background: #f2f2f2;
-	color: #000;
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+	background-color: transparent;
+	border: 1px solid $color__link;
 }
-.menu-toggle.toggle-on:hover,
-.menu-toggle.toggle-on:active {
-	color: $color__link;
-}
+
 .menu-toggle.toggle-on:before {
 	content: "\f405";
 	height: 64px;
