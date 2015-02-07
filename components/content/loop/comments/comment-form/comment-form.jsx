@@ -38,7 +38,7 @@ var commentForm = React.createClass({
 						<input type="text" placeholder="Website" ref="website" />
 					</p>
 					<p className="comment-form-comment">
-						<textarea type="text" placeholder="What do you think?" ref="comment" />
+						<textarea placeholder="What do you think?" ref="text" />
 					</p>
 					<input type="submit" value="Post" />
 				</form>
