@@ -7,7 +7,13 @@ var React = require( 'react/addons' ),
 /**
  * Internal dependencies
  */
-Comments = require( '../comments/comments.jsx' );
+var Comments = require( '../comments/comments.jsx' ),
+	EntryContent = require( './entry-content/entry-content.jsx' );
+
+/**
+ * Animation setup
+ */
+var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 /**
  * Renders post
@@ -20,12 +26,15 @@ Hentry = React.createClass({
 		page( url );
 	},
 	render: function() {
-		// Decide whether or not to render comments
-		var comments;
+		// Decide whether or not to render comments and entry-content
+		var comments,
+			content;
 		if ( this.props.context !== 'index' ) {
 			comments = <Comments postID={ this.props.id } />;
+			entryContent = <EntryContent content={ this.props.content } />;
 		} else {
 			comments = '';
+			entryContent = '';
 		}
 
 		return (
@@ -42,7 +51,9 @@ Hentry = React.createClass({
 						</div>
 					</header>
 
-					<div className="entry-content" dangerouslySetInnerHTML={{__html: this.props.content}} />
+					<ReactCSSTransitionGroup transitionName="picard-content">
+						{ entryContent }
+					</ReactCSSTransitionGroup>
 				</article>
 				{ comments }
 			</div>
