@@ -128,11 +128,16 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "footer/footer";
 
 /*--------------------------------------------------------------
-13.0 Animations
+13.0 Media
+--------------------------------------------------------------*/
+@import "_shared/media";
+
+/*--------------------------------------------------------------
+14.0 Animations
 --------------------------------------------------------------*/
 @import "_shared/animations";
 
 /*--------------------------------------------------------------
-14.0 Media Queries
+15.0 Media Queries
 --------------------------------------------------------------*/
 @import "_shared/media-queries/media-queries";
