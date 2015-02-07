@@ -17,6 +17,7 @@
  */
 
 @media screen and (min-width: 770px) {
+/* Typography */
 body,
 button,
 input,
@@ -24,6 +25,23 @@ select,
 textarea {
 	font-size: 20px;
 	line-height: 1.6;
+}
+address,
+blockquote,
+blockquote p,
+p,
+pre {
+	margin-bottom: 32px;
+}
+
+/* Elements */
+dd,
+dl,
+hr,
+ol,
+table,
+ul {
+	margin-bottom: 32px;
 }
 
 .site-branding {
@@ -107,5 +125,12 @@ textarea {
 .comment-content h6 {
 	font-size: 20px;
 	line-height: (24/20);
+}
+
+/* Main Navigation */
+.main-navigation .menu {
+	max-width: 770px;
+	margin: 0 auto;
+	padding: 0 32px;
 }
 }
