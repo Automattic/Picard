@@ -63,15 +63,6 @@
 	font-size: 16px;
 	line-height: 64px;
 }
-.menu-toggle:hover,
-.menu-toggle:focus,
-.menu-toggle:active {
-	/*
-background: #333;
-	border-left-color: #eaeaea;
-	color: $color__link;
-*/
-}
 .menu-toggle.toggle-on,
 .menu-toggle.toggle-on:focus {
 	background: #f2f2f2;
@@ -79,7 +70,7 @@ background: #333;
 }
 .menu-toggle.toggle-on:hover,
 .menu-toggle.toggle-on:active {
-	color: #06973b;
+	color: $color__link;
 }
 .menu-toggle.toggle-on:before {
 	content: "\f405";
@@ -127,7 +118,7 @@ background: #333;
 .dropdown-toggle:hover:before,
 .dropdown-toggle:focus:before,
 .dropdown-toggle:active:before {
-	color: #06973b;
+	color: $color__link;
 }
 .dropdown-toggle.toggle-on:before {
 	content: "\f432";
