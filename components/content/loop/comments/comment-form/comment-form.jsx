@@ -24,13 +24,18 @@ var commentForm = React.createClass({
 	},
 	render: function() {
 		return (
-			<form className="commentForm" onSubmit={this.handleSubmit}>
-				<input type="text" placeholder="Your name" ref="author" />
-				<input type="text" placeholder="Your email address" ref="emailAddress" />
-				<input type="text" placeholder="Your website" ref="website" />
-				<input type="text" placeholder="Say something…" ref="text" />
-				<input type="submit" value="Post" />
-			</form>
+			<div id="respond" className="comment-respond js">
+				<h3 id="reply-title" className="comment-reply-title">
+					Leave a reply <small><a rel="nofollow" id="cancel-comment-reply-link">Cancel reply</a></small>
+				</h3>
+				<form className="comment-form" onSubmit={this.handleSubmit}>
+					<input type="text" placeholder="Your name" ref="author" />
+					<input type="text" placeholder="Your email address" ref="emailAddress" />
+					<input type="text" placeholder="Your website" ref="website" />
+					<input type="text" placeholder="Say something…" ref="text" />
+					<input type="submit" value="Post" />
+				</form>
+			</div>
 		);
 	}
 
