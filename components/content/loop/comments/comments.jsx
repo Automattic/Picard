@@ -19,7 +19,7 @@ var Comments = React.createClass({
 			url: repliesLink,
 			dataType: 'json',
 			success: function( data ) {
-				this.setState({data: data});
+				this.setState({data: data.reverse() });
 			}.bind(this),
 			error: function(xhr, status, err) {
 				console.error(repliesLink, status, err.toString());
@@ -27,23 +27,19 @@ var Comments = React.createClass({
 		});
 	},
 	handleCommentSubmit: function( comment ) {
-		var comments = this.state.data;
-		var newComments = comments.concat([comment]);
-		newComments.unshift( newComments.pop() );
-		this.setState({data: newComments});
 		comment['comment_post_ID'] = this.props.postID;
-		jQuery.ajax({
+		jQuery.ajax( {
 			url: '/wp-json/picard/comments',
 			dataType: 'json',
 			type: 'POST',
 			data: comment,
-			success: function(data) {
-				// this.setState({data: data});
-			}.bind(this),
-			error: function(xhr, status, err) {
-				console.error('/wp-json/picard/comments', status, err.toString());
-			}.bind(this)
-		});
+			success: function( newComment ) {
+				this.setState( { data: this.state.data.concat( [ newComment ] ) } );
+			}.bind( this ),
+			error: function( xhr, status, err ) {
+				console.error( '/wp-json/picard/comments', status, err.toString() );
+			}.bind( this )
+		} );
 	},
 	getInitialState: function() {
 		return {data: []};

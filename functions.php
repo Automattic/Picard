@@ -149,7 +149,7 @@ function picard_api_init() {
 }
 add_action( 'wp_json_server_before_serve', 'picard_api_init' );
 
-class Picard_API_Comments {
+class Picard_API_Comments extends WP_JSON_Comments {
 	public function register_routes( $routes ) {
 		$routes['/picard/comments'] = array(
 			array( array( $this, 'new_post' ), WP_JSON_Server::CREATABLE ),
@@ -166,8 +166,14 @@ class Picard_API_Comments {
 			'comment_author_url'   => $_POST['comment_author_url'],
 			'comment_content'      => $_POST['content'],
 			'comment_author_IP'    => $_SERVER['REMOTE_ADDR'],
+			'comment_type'         => '',
 		);
 		$comment_id = wp_new_comment( $commentdata );
-		error_log( $comment_id );
+
+		$new_comment = get_comment( $comment_id );
+
+		$prepared_comment = $this->prepare_comment( $new_comment );
+
+		return ( $comment_id ) ? $prepared_comment : array();
 	}
 }
