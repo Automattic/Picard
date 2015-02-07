@@ -22,7 +22,7 @@ Hentry = React.createClass({
 	render: function() {
 		// Decide whether or not to render comments
 		var comments;
-		if ( this.props.context === 'single' ) {
+		if ( this.props.context !== 'index' ) {
 			comments = <Comments postID={ this.props.id } />;
 		} else {
 			comments = '';
