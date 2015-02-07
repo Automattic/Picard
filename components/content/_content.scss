@@ -16,8 +16,13 @@
 }
 
 .entry-thumbnail {
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
 	position: relative;
 	overflow: hidden;
+	padding: 128px 0;
 }
 .index .entry-thumbnail {
 	padding: 128px 0;
@@ -37,11 +42,14 @@
 
 .has-post-thumbnail .entry-header {
 	position: relative;
+	z-index: 2;
+}
+
+.single .has-post-thumbnail .entry-header {
 	top: 50%;
 	-webkit-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
-	z-index: 2;
 }
 
 .entry-header {
