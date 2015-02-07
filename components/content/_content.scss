@@ -24,6 +24,9 @@
 	overflow: hidden;
 	padding: 128px 0;
 }
+.single .entry-thumbnail {
+	padding: 0;
+}
 
 .entry-thumbnail:after {
 	background-color: rgba(0, 0, 0, 0.3);
