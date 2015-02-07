@@ -3,14 +3,10 @@
 // ==========================================================================
 
 @mixin button--base() {
-	padding: .6em 1em .4em;
-	border: 1px solid #ccc;
-	border-radius: 3px;
+	padding: 6px 12px;
+	border: 1px solid $color__link;
 	cursor: pointer; // Improves usability and consistency of cursor style between image-type 'input' and others
 	appearance: button; // Corrects inability to style clickable 'input' types in iOS
-	font-size: 12px;
-	font-size: 1.2rem;
-	line-height: 1;
 }
 
 // Example button mixin that sets colors

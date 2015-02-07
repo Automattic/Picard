@@ -7,10 +7,18 @@
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	border-bottom: 1px solid #d9d9d9;
 }
+
+// Move .main-navigation .menu into media-queries.scss
+.main-navigation .menu {
+	max-width: 770px;
+	margin: 0 auto;
+	padding: 0 32px;
+}
+
 .main-navigation ul.toggle-on {
 	display: block;
+	position: relative;
 }
 .main-navigation ul ul {
 	padding-left: 24px;
@@ -26,13 +34,13 @@
 	left: 0;
 	width: 24px;
 	height: 1px;
-	background: #d9d9d9;
+	background: #eaeaea;
 }
 .main-navigation li {
 	position: relative;
 	padding-top: 12px;
 	padding-bottom: 12px;
-	border-top: 1px solid #d9d9d9;
+	border-top: 1px solid #eaeaea;
 }
 .main-navigation a {
 	display: block;
@@ -48,28 +56,29 @@
 /* Menu Toogle */
 .menu-toggle {
 	position: absolute;
-	top: 0;
-	right: 0;
-	width: 73px;
-	height: 72px;
-	background: #fff;
-	border-left: 1px solid #d9d9d9;
-	color: #000;
-	text-align: center;
+	top: 32px;
+	right: 32px;
+	padding: 0;
+	width: 64px;
+	height: 64px;
+	border: 0;
 }
 .menu-toggle:before {
 	content: "\f419";
-	height: 24px;
-	width: 16px;
+	height: 64px;
+	width: 64px;
 	color: inherit;
 	font-size: 16px;
-	line-height: 24px;
+	line-height: 64px;
 }
 .menu-toggle:hover,
 .menu-toggle:focus,
 .menu-toggle:active {
-	background: #f2f2f2;
-	color: #06973b;
+	/*
+background: #333;
+	border-left-color: #eaeaea;
+	color: $color__link;
+*/
 }
 .menu-toggle.toggle-on,
 .menu-toggle.toggle-on:focus {
@@ -82,10 +91,10 @@
 }
 .menu-toggle.toggle-on:before {
 	content: "\f405";
-	height: 32px;
-	width: 32px;
+	height: 64px;
+	width: 64px;
 	font-size: 32px;
-	line-height: 32px;
+	line-height: 64px;
 }
 
 /* Menu Description */
