@@ -56,11 +56,11 @@ Content = React.createClass({
 		if( prevProps !== this.props ) {
 			this.loadPostsFromServer();
 		}
-	},
-	render: function() {
+
 		// Call the single entry function render hack
 		entry_thumbnail();
-
+	},
+	render: function() {
 		// Check if we're just viewing one post, if so, pass the ID down
 		if ( this.state.data.length === 1 ) {
 			singlePostID = this.state.data[0].ID;
