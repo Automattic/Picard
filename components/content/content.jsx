@@ -41,6 +41,9 @@ Content = React.createClass({
 
 		// Set body class
 		document.body.className = this.props.bodyClass;
+
+		// Scoll to top on page change
+		window.scroll(0,0);
 	},
 	getInitialState: function() {
 		return {data: []};
