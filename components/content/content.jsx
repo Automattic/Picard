@@ -54,8 +54,14 @@ Content = React.createClass({
 		}
 	},
 	render: function() {
+		// Check if we're just viewing one post, if so, pass the ID down
+		if ( this.state.data.length === 1 ) {
+			singlePostID = this.state.data[0].ID;
+		} else {
+			singlePostID = 0;
+		}
 		return (
-			<Loop data={this.state.data} context={ this.props.bodyClass } />
+			<Loop data={this.state.data} context={ this.props.bodyClass } postID={ singlePostID } />
 		);
 	}
 });

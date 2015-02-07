@@ -29,7 +29,7 @@ Hentry = React.createClass({
 		// Decide whether or not to render comments and entry-content
 		var comments,
 			content;
-		if ( this.props.context !== 'index' ) {
+		if ( this.props.context !== 'index' && this.props.showExtra === true ) {
 			comments = <Comments postID={ this.props.id } />;
 			entryContent = <EntryContent content={ this.props.content } />;
 		} else {
