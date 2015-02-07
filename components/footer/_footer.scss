@@ -20,3 +20,8 @@
 .site-info a:focus {
 	color: #fff;
 }
+
+.move-left .site-info,
+.move-right .site-info {
+	display: none;
+}
