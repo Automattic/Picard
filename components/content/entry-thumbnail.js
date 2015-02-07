@@ -8,7 +8,7 @@ var $ = jQuery;
 var entry_thumbnail = function() {
 
 	var site_header_height  = $( '.site-header' ).outerHeight();
-	if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
+	if ( $( '#wpadminbar' ).length ) {
 		site_header_height += $( '#wpadminbar' ).outerHeight();
 	}
 	if ( ( $( 'body' ).hasClass( 'page' ) || $( 'body' ).hasClass( 'single' ) ) && $( '.hentry' ).hasClass( 'has-post-thumbnail' ) ) {
