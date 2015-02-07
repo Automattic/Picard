@@ -29,10 +29,19 @@ var commentForm = React.createClass({
 					Leave a reply <small><a rel="nofollow" id="cancel-comment-reply-link">Cancel reply</a></small>
 				</h3>
 				<form className="comment-form" onSubmit={this.handleSubmit}>
-					<input type="text" placeholder="Your name" ref="author" />
-					<input type="text" placeholder="Your email address" ref="emailAddress" />
-					<input type="text" placeholder="Your website" ref="website" />
-					<input type="text" placeholder="Say something…" ref="text" />
+					<p className="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span className="required">*</span></p>
+					<p className="comment-form-author">
+						<input type="text" placeholder="Name" ref="author" />
+					</p>
+					<p className="comment-form-email">
+						<input type="text" placeholder="Email address" ref="emailAddress" />
+					</p>
+					<p className="comment-form-url">
+						<input type="text" placeholder="Website" ref="website" />
+					</p>
+					<p className="comment-form-comment">
+						<textarea type="text" placeholder="What do you think?" ref="comment" />
+					</p>
 					<input type="submit" value="Post" />
 				</form>
 			</div>
