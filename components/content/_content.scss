@@ -7,7 +7,7 @@
 	padding: 0;
 }
 
-.hentry-wrapper + .hentry-wrapper {
+.hentry-wrapper + .hentry-wrapper .hentry:not(.has-post-thumbnail) {
 	border-top: 1px solid $color__border--primary;
 }
 
