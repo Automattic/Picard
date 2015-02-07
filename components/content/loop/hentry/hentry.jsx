@@ -42,7 +42,7 @@ Hentry = React.createClass({
 			postClass;
 		if ( this.props.featured_image ) {
 			var thumbnailImage = {
-			  backgroundImage: 'url(' + this.props.featured_image.source + ')'
+				backgroundImage: 'url(' + this.props.featured_image.source + ')'
 			};
 			entryHeader = <div className="entry-thumbnail" style={thumbnailImage}>
 				<header className="entry-header">

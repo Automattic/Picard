@@ -37,11 +37,15 @@ Loop = React.createClass({
 
 		return (
 			<div>
-				<div dangerouslySetInnerHTML={{__html: next}} />
-				<div dangerouslySetInnerHTML={{__html: previous}} />
-				<ReactCSSTransitionGroup transitionName="picard">
-					{ postNodes }
-				</ReactCSSTransitionGroup>
+			<ReactCSSTransitionGroup transitionName="picard">
+				{ postNodes }
+			</ReactCSSTransitionGroup>
+			<nav className="navigation post-navigation" role="navigation">
+				<div className="nav-links">
+					<div className="nav-next" dangerouslySetInnerHTML={{__html: next}} />
+					<div className="nav-previous" dangerouslySetInnerHTML={{__html: previous}} />
+				</div>
+			</nav>
 			</div>
 		);
 	}
