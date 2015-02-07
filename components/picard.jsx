@@ -8,6 +8,7 @@ var React = require( 'react/addons' ),
  * Internal dependencies
  */
 var Router = require( './router/router.jsx' ),
+    entry_thumbnail = require( './content/entry-thumbnail.js' ),
 	navigation = require( './header/masthead/site-navigation/site-navigation-toggle.js' );
 
 /**

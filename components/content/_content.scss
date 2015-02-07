@@ -13,6 +13,7 @@
 
 .entry-thumbnail {
 	position: relative;
+	overflow: hidden;
 }
 
 .entry-thumbnail:after {
@@ -36,6 +37,20 @@
 	position: absolute;
 	top: 50%;
 	z-index: 2;
+}
+
+/* Page & Single Entry Thumbnail */
+.page .has-post-thumbnail img,
+.single .has-post-thumbnail img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	max-width: none;
+	min-width: 100%;
+	min-height: 100%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform:    translate(-50%, -50%);
+	transform:         translate(-50%, -50%);
 }
 
 .entry-header {
