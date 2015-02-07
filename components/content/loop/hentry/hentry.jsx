@@ -70,7 +70,7 @@ Hentry = React.createClass({
 		}
 
 		return (
-			<div>
+			<div className="hentry-wrapper">
 				<article className={ postClass }>
 					{ entryHeader }
 
