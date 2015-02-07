@@ -117,7 +117,7 @@ function picard_montserrat_font_url() {
 
 function picard_scripts() {
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/components/_shared/genericons/genericons.css', array(), '3.3' );
-	
+
 	wp_enqueue_style( 'picard-style', get_stylesheet_uri(), '20141230' );
 
 	wp_register_script( 'picard-script', get_template_directory_uri() . '/picard.js', array( 'jquery' ), '20150204', true );
@@ -129,6 +129,12 @@ add_action( 'wp_enqueue_scripts', 'picard_scripts' );
 function get_json( $_post ) {
 	foreach ( $_post as $post ) {
 		$_post['post_class'] = implode( ' ', get_post_class( $_post['ID'] ) );
+
+		// Get next and previous links
+		global $post;
+		$post = get_post( $_post['ID'] );
+		$_post['next_post'] = get_next_post_link();
+		$_post['previous_post'] = get_previous_post_link();
 	}
 	return $_post;
 }
