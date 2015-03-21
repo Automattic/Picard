@@ -43,12 +43,19 @@ Loop = React.createClass({
 
 		document.onkeydown = function( e ) {
 			// Left arrow keydown
+			var el,
+				removeClass,
+				url;
 			if ( e.keyCode === 37 ) {
 				e.preventDefault();
+				window.clearTimeout( removeClass );
 				self.removeMove();
 				self.addMoveLeft();
-				var el = document.querySelector('.nav-previous a');
-				var url = el.href;
+				removeClass = window.setTimeout( function() {
+					self.removeMove();
+				}, 1000 );
+				el = document.querySelector('.nav-previous a');
+				url = el.href;
 				url = url.replace(/^.*\/\/[^\/]+/, '');
 				page( url );
 			}
@@ -56,10 +63,14 @@ Loop = React.createClass({
 			// Right arrow keydown
 			if ( e.keyCode === 39 ) {
 				e.preventDefault();
+				window.clearTimeout( removeClass );
 				self.removeMove();
 				self.addMoveRight();
-				var el = document.querySelector('.nav-next a');
-				var url = el.href;
+				removeClass = window.setTimeout( function() {
+					self.removeMove();
+				}, 1000 );
+				el = document.querySelector('.nav-next a');
+				url = el.href;
 				url = url.replace(/^.*\/\/[^\/]+/, '');
 				page( url );
 			}
