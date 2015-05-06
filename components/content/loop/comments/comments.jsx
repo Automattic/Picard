@@ -15,31 +15,31 @@ var CommentList = require( './comment-list/comment-list.jsx' ),
 var Comments = React.createClass({
 	loadCommentsFromServer: function() {
 		var repliesLink = '/wp-json/posts/' + this.props.postID + '/comments/';
-		jQuery.ajax({
-			url: repliesLink,
-			dataType: 'json',
-			success: function( data ) {
-				this.setState({data: data.reverse() });
-			}.bind(this),
-			error: function(xhr, status, err) {
-				console.error(repliesLink, status, err.toString());
-			}.bind(this)
-		});
+		// jQuery.ajax({
+		// 	url: repliesLink,
+		// 	dataType: 'json',
+		// 	success: function( data ) {
+		// 		this.setState({data: data.reverse() });
+		// 	}.bind(this),
+		// 	error: function(xhr, status, err) {
+		// 		console.error(repliesLink, status, err.toString());
+		// 	}.bind(this)
+		// });
 	},
 	handleCommentSubmit: function( comment ) {
 		comment['comment_post_ID'] = this.props.postID;
-		jQuery.ajax( {
-			url: '/wp-json/picard/comments',
-			dataType: 'json',
-			type: 'POST',
-			data: comment,
-			success: function( newComment ) {
-				this.setState( { data: this.state.data.concat( [ newComment ] ) } );
-			}.bind( this ),
-			error: function( xhr, status, err ) {
-				console.error( '/wp-json/picard/comments', status, err.toString() );
-			}.bind( this )
-		} );
+		// jQuery.ajax( {
+		// 	url: '/wp-json/picard/comments',
+		// 	dataType: 'json',
+		// 	type: 'POST',
+		// 	data: comment,
+		// 	success: function( newComment ) {
+		// 		this.setState( { data: this.state.data.concat( [ newComment ] ) } );
+		// 	}.bind( this ),
+		// 	error: function( xhr, status, err ) {
+		// 		console.error( '/wp-json/picard/comments', status, err.toString() );
+		// 	}.bind( this )
+		// } );
 	},
 	getInitialState: function() {
 		return {data: []};

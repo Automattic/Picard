@@ -118,9 +118,9 @@ function picard_montserrat_font_url() {
 function picard_scripts() {
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/components/_shared/genericons/genericons.css', array(), '3.3' );
 
-	wp_enqueue_style( 'picard-style', get_stylesheet_uri(), '20141230' );
+	wp_enqueue_style( 'picard-style', get_stylesheet_uri(), '20150405' );
 
-	wp_register_script( 'picard-script', get_template_directory_uri() . '/picard.js', array( 'jquery' ), '20150204', true );
+	wp_register_script( 'picard-script', get_template_directory_uri() . '/picard.js', array(), '20150506', true );
 
 	wp_enqueue_script( 'picard-script' );
 }
@@ -128,7 +128,8 @@ add_action( 'wp_enqueue_scripts', 'picard_scripts' );
 
 function get_json( $_post ) {
 	foreach ( $_post as $post ) {
-		$_post['post_class'] = implode( ' ', get_post_class( $_post['ID'] ) );
+		$_post['post_class'] = implode( ' ', get_post_class( '', $_post['ID'] ) );
+		error_log( print_r( get_post_class( '', $_post['ID'] ), true ) );
 
 		// Get next and previous links
 		global $post;

@@ -29,6 +29,7 @@
     "page": "~1.5.0",
     "react": "~0.12.2",
     "reactify": "~0.17.1",
+    "superagent": "^1.2.0",
     "vinyl-buffer": "~1.0.0",
     "vinyl-source-stream": "~1.0.0",
     "watchify": "~2.2.1"
