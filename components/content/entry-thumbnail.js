@@ -7,8 +7,6 @@
 var entry_thumbnail = function() {
 
 	var site_header_height  = document.querySelector( '.site-header' ).clientHeight;
-	console.log( 'site-header: ' );
-	console.log( site_header_height );
 
 	Element.prototype.hasClass = function(className) {
 	    return this.className && new RegExp("(^|\\s)" + className + "(\\s|$)").test(this.className);

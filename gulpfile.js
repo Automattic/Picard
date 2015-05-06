@@ -59,7 +59,7 @@ gulp.task( 'autoprefixer', function () {
 gulp.task('styles', function() {
   return gulp.src('components/style.scss')
 	.pipe( sass() )
-	.pipe( autoprefixer( 'last 3 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4' ) )
+	// .pipe( autoprefixer( 'last 3 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4' ) )
 	// .pipe( minifycss() )
 	.pipe( gulp.dest( './' ) )
 	.pipe( notify( { message: 'Styles task complete' } ) );
@@ -69,31 +69,7 @@ gulp.task('styles', function() {
 gulp.task( 'watch', function() {
 	// Watch .scss files
 	gulp.watch('components/**/*.scss', ['styles']);
+
+	// Watch .jsx files
+	gulp.watch('components/**/*.jsx', ['js']);
 });
-
-
-// var getBundleName = function() {
-// 	var version = require( './package.json' ).version;
-// 	var name = require( './package.json' ).name;
-// 	return version + '.' + name + '.' + 'min';
-// };
-
-// gulp.task( 'javascript', function() {
-// 	var bundler = browserify({
-// 		entries: ['./js/picard.js'],
-// 		debug: true
-// 	});
-
-// 	var bundle = function() {
-// 		return bundler
-// 			.bundle()
-// 			.pipe( source( getBundleName() + '.js' ) )
-// 			.pipe( buffer() )
-// 			.pipe( sourcemaps.init( { loadmaps: true } ) )
-// 			.pipe( uglify() )
-// 			.pipe( sourcemaps.write( './' ) )
-// 			.pipe( gulp.dest( './js/build/' ) );
-// 	};
-
-// 	return bundle();
-// });

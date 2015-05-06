@@ -1,153 +1,45 @@
-/* Enter */
-// body.single .picard-enter {
-// 	-webkit-animation: scaleUp .7s ease both;
-// 	animation: scaleUp .7s ease both;
-// }
-
 .picard-enter {
-  opacity: 0.01;
-  transition: opacity .01s ease-in;
+	opacity: 0.01;
+	position: absolute;
+	transition: opacity .01s ease-in;
+	width: 100%;
 }
 
 .picard-enter.picard-enter-active {
-  opacity: 1;
+	opacity: 1;
 }
 
 .picard-leave {
-  opacity: 1;
-  transition: opacity .01s ease-in;
+	opacity: 1;
+	position: absolute;
+	transition: opacity .01s ease-in;
+	width: 100%;
 }
 
 .picard-leave.picard-leave-active {
-  opacity: 0.01;
+	opacity: 0.01;
 }
 
-body.single.move-right .picard-enter {
-	-webkit-animation: slideFromRight .7s ease both;
-	animation: slideFromRight .7s ease both;
-	position: absolute;
-	width: 100%;
-}
-
-@-webkit-keyframes slideFromRight {
-	from {
-		opacity: 0.3;
-		-webkit-transform: translateX(100%);
+body.single {
+	.picard-enter {
+		opacity: 0.01;
+		position: absolute;
+		transition: opacity .7s ease-in;
+		width: 100%;
 	}
-	to {
+
+	.picard-enter.picard-enter-active {
 		opacity: 1;
-		-webkit-transform: translateX(0);
 	}
-}
 
-@keyframes slideFromRight {
-	from {
-		opacity: 0.3;
-		-webkit-transform: translateX(100%);
-		transform: translateX(100%);
-	}
-	to {
+	.picard-leave {
 		opacity: 1;
-		-webkit-transform: translateX(0);
-		transform: translateX(0);
+		position: absolute;
+		transition: opacity .7s ease-in;
+		width: 100%;
 	}
-}
 
-body.single.move-left .picard-enter {
-	-webkit-animation: slideFromLeft .7s ease both;
-	animation: slideFromLeft .7s ease both;
-	position: absolute;
-	width: 100%;
-}
-
-@-webkit-keyframes slideFromLeft {
-	from {
-		opacity: 0.3;
-		-webkit-transform: translateX(-100%);
-	}
-	to {
-		opacity: 1;
-		-webkit-transform: translateX(0);
-	}
-}
-
-@keyframes slideFromLeft {
-	from {
-		opacity: 0.3;
-		-webkit-transform: translateX(-100%);
-		transform: translateX(-100%);
-	}
-	to {
-		opacity: 1;
-		-webkit-transform: translateX(0);
-		transform: translateX(0);
-	}
-}
-
-/* Leave */
-// body.single .picard-leave {
-// 	-webkit-animation: scaleDown .7s ease both;
-// 	animation: scaleDown .7s ease both;
-// }
-
-body.single.move-right .picard-leave {
-	-webkit-animation: slideToLeft .7s ease both;
-	animation: slideToLeft .7s ease both;
-	position: absolute;
-	width: 100%;
-}
-
-@-webkit-keyframes slideToLeft {
-	from {
-		opacity: 1;
-		-webkit-transform: translateX(0);
-	}
-	to {
-		opacity: 0.3;
-		-webkit-transform: translateX(-100%);
-	}
-}
-
-@keyframes slideToLeft {
-	from {
-		opacity: 1;
-		-webkit-transform: translateX(0);
-		transform: translateX(0);
-	}
-	to {
-		opacity: 0.3;
-		-webkit-transform: translateX(-100%);
-		transform: translateX(-100%);
-	}
-}
-
-body.single.move-left .picard-leave {
-	-webkit-animation: slideToRight .7s ease both;
-	animation: slideToRight .7s ease both;
-	position: absolute;
-	width: 100%;
-}
-
-@-webkit-keyframes slideToRight {
-	from {
-		opacity: 1;
-		-webkit-transform: translateX(0);
-	}
-	to {
-		opacity: 0.3;
-		-webkit-transform: translateX(100%);
-	}
-}
-
-@keyframes slideToRight {
-	from {
-		opacity: 1;
-		-webkit-transform: translateX(0);
-		transform: translateX(0);
-	}
-	to {
-		opacity: 0.3;
-		-webkit-transform: translateX(100%);
-		transform: translateX(100%);
+	.picard-leave.picard-leave-active {
+		opacity: 0.01;
 	}
 }
