@@ -6,7 +6,7 @@ Picard is an experimental prototype WordPress theme that makes use of [React](ht
 
 ## Installation
 
-1. Install and activate the WP REST API plugin (make sure that you are using the `master` branch – the default is currently develop).
+1. Install and activate the [WP REST API](https://github.com/WP-API/WP-API/tree/master) plugin (make sure that you are using the `master` branch – the default is currently develop).
 2. Clone this repo to your computer in the `wp-content/themes` directory of your WordPress installation (e.g. `git clone git@github.com:Automattic/Picard.git`).
 3. Run `npm install` to install the node dependencies.
 4. Run `gulp build` to compile the JavaScript and Sass.
