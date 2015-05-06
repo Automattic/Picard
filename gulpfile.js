@@ -65,6 +65,9 @@ gulp.task('styles', function() {
 	.pipe( notify( { message: 'Styles task complete' } ) );
 });
 
+// Builder
+gulp.task( 'build', ['styles', 'js']);
+
 // Watcher
 gulp.task( 'watch', function() {
 	// Watch .scss files
