@@ -1,6 +1,7 @@
 module.exports = function (gulp, $, handleErrors) {
 	var
 		browserify = require( 'browserify' ),
+		buffer = require( 'vinyl-buffer' ),
 		reactify = require( 'reactify' ),
 		bundler = browserify( './components/picard.jsx' ),
 		source = require( 'vinyl-source-stream' );

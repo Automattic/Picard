@@ -1,7 +1,6 @@
 // Stash requires in variables
 var
     $ = require('gulp-load-plugins')(),
-	buffer = require( 'vinyl-buffer' ),
 	gulp = require( 'gulp' ),
 	handleErrors = require('./gulp/handleErrors.js')(gulp, $);
 
