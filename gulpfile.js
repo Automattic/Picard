@@ -1,16 +1,26 @@
-var autoprefixer = require( 'gulp-autoprefixer' ),
+var // stash all gulp plugins in $
+    $ = require('gulp-load-plugins')({
+		pattern: ['gulp-*', 'gulp.*'],
+		replaceString: /\bgulp[\-.]/
+	}),
 	browserify = require( 'browserify' ),
 	buffer = require( 'vinyl-buffer' ),
 	gulp = require( 'gulp' ),
-	gutil = require( 'gulp-util' ),
-	notify = require( 'gulp-notify' ),
 	reactify = require( 'reactify' ),
-	sass = require('gulp-ruby-sass'),
 	source = require( 'vinyl-source-stream' ),
-	sourcemaps = require( 'gulp-sourcemaps' ),
-	uglify = require( 'gulp-uglify' ),
-	watchify = require( 'watchify' ),
-	watch = require( 'gulp-watch' );
+	watchify = require( 'watchify' );
+
+// Error Handler
+var handleErrors = function () {
+    // Send error to notification center with gulp-notify
+    $.notify.onError({
+        title: "Compile Error",
+        message: "<%= error.message %>"
+    }).apply(this, arguments);
+
+    // Keep gulp from hanging on this task
+    this.emit('end');
+};
 
 gulp.task( 'react', function() {
 	return gulp.src( 'components/picard.jsx' )
@@ -26,43 +36,30 @@ gulp.task( 'js', bundle );
 
 function bundle() {
 	return bundler.bundle()
-		// .on( 'error', gutil.log.bind( gutil, 'Browserify Error' ) )
+		// .on( 'error', $.util.log.bind( $.util, 'Browserify Error' ) )
 		.pipe( source( 'picard.js' ) )
 			// .pipe( buffer() )
-			// .pipe( sourcemaps.init( { loadMaps: true } ) )
-			// .pipe( sourcemaps.write( './' ) )
+			// .pipe( $.sourcemaps.init( { loadMaps: true } ) )
+			// .pipe( $.sourcemaps.write( './' ) )
 		.pipe( gulp.dest( './' ) );
 }
 
-gulp.task('sass', function () {
-	return gulp.src('scss/style.scss')
-	.pipe( sass( {
-		sourcemap: true,
-		sourcemapPath: '../scss',
-		style: 'expanded'
-	} ) )
-	.on( 'error', function (err) { console.log(err.message); } )
-	.pipe( gulp.dest( '' ) );
-});
-
-gulp.task( 'autoprefixer', function () {
-	return gulp.src( 'style.css' )
-	.pipe(sourcemaps.init( { loadMaps: true} ) )
-	.pipe( autoprefixer( {
-		browsers: [ 'last 2 versions' ]
-	} ) )
-	.pipe( sourcemaps.write() )
-	.pipe(gulp.dest( '' ) );
-});
-
-// Styles
-gulp.task('styles', function() {
-  return gulp.src('components/style.scss')
-	.pipe( sass() )
-	// .pipe( autoprefixer( 'last 3 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4' ) )
-	// .pipe( minifycss() )
-	.pipe( gulp.dest( './' ) )
-	.pipe( notify( { message: 'Styles task complete' } ) );
+gulp.task('styles', function () {
+	return gulp.src('./components/style.scss')
+	.pipe($.sourcemaps.init())
+	.pipe($.sass())
+	// send SASS errors to console
+    .on('error', handleErrors)
+	// add browser prefixes
+    .pipe($.autoprefixer({
+		browsers: [ 'last 3 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4' ]
+	}))
+    // minify css
+    .pipe($.minifyCss({
+        keepSpecialComments: 1
+    }))
+	.pipe($.sourcemaps.write())
+	.pipe( gulp.dest( './' ) );
 });
 
 // Builder
@@ -76,3 +73,6 @@ gulp.task( 'watch', function() {
 	// Watch .jsx files
 	gulp.watch('components/**/*.jsx', ['js']);
 });
+
+
+gulp.task( 'default', ['watch'] );
