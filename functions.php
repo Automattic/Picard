@@ -124,7 +124,7 @@ function picard_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'picard_scripts' );
 
-function get_json( $_post ) {
+function picard_get_json( $_post ) {
 	foreach ( $_post as $post ) {
 		$_post['post_class'] = implode( ' ', get_post_class( '', $_post['ID'] ) );
 
@@ -150,7 +150,7 @@ function get_json( $_post ) {
 	return $_post;
 }
 
-add_filter( 'json_prepare_post', 'get_json' );
+add_filter( 'json_prepare_post', 'picard_get_json' );
 
 function picard_api_init() {
 	global $picard_api_comments;
