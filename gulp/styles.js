@@ -7,7 +7,7 @@ module.exports = function (gulp, $, handleErrors) {
 		.on('error', handleErrors)
 		// add browser prefixes
 		.pipe($.autoprefixer({
-			browsers: [ 'last 3 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4' ]
+			browsers: [ '> 5%', 'last 2 versions' ]
 		}))
 		// minify css
 		.pipe($.minifyCss({
