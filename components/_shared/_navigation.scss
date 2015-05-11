@@ -36,6 +36,7 @@
 .post-navigation .nav-next a:before,
 .post-navigation .nav-previous a:before {
 	content: "\f431";
+    font-family: Genericons;
 	font-size: 32px;
 	position: absolute;
 }
@@ -45,8 +46,8 @@
 	-moz-transform: rotate(90deg);
 	-ms-transform: rotate(90deg);
 	transform: rotate(90deg);
-	top: 16px;
-	left: 32px;
+	top: 7px;
+	left: 16px;
 
 }
 
@@ -55,6 +56,6 @@
 	-moz-transform: rotate(-90deg);
 	-ms-transform: rotate(-90deg);
 	transform: rotate(-90deg);
-	top: 32px;
+	top: 7px;
 	left: 16px;
 }

@@ -121,6 +121,8 @@ function picard_scripts() {
 	wp_register_script( 'picard-script', get_template_directory_uri() . '/picard.js', array(), '20150506', true );
 
 	wp_enqueue_script( 'picard-script' );
+
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3.1' );
 }
 add_action( 'wp_enqueue_scripts', 'picard_scripts' );
 
