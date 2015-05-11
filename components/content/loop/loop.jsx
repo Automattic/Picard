@@ -7,7 +7,8 @@ var React = require( 'react/addons' ),
 /**
  * Internal dependencies
  */
-var Hentry = require( './hentry/hentry.jsx' );
+var Hentry = require( './hentry/hentry.jsx' ),
+	PostNavigation = require( './navigation/post-navigation.jsx');
 
 var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
@@ -26,16 +27,17 @@ Loop = React.createClass({
 		}
 
 		var postNodes = this.props.data.map( function ( post ) {
-
-			// Get next and previous post links
-			if ( context === 'single' ) {
-				next = post.next_post;
-				previous = post.previous_post;
-			}
-
 			return (
 				<Hentry key={post.ID} id={post.ID} post_class={post.post_class} link={post.link} title={post.title} date={post.date} content={post.content} featured_image={ post.featured_image } context={ context } showExtra={ showExtra } />
 			);
+		});
+
+		var navigationNodes = this.props.data.map( function ( post ) {
+			if ( context === 'single' ) {
+				return (
+					<PostNavigation previous_post_url={post.previous_post_url} previous_post_title={post.previous_post_title} next_post_url={post.next_post_url} next_post_title={post.next_post_title} />
+				);
+			}
 		});
 
 		return (
@@ -43,12 +45,7 @@ Loop = React.createClass({
 				<ReactCSSTransitionGroup transitionName="picard">
 					{ postNodes }
 				</ReactCSSTransitionGroup>
-				<nav className="navigation post-navigation" role="navigation">
-					<div className="nav-links">
-						<div className="nav-next" dangerouslySetInnerHTML={{__html: next}} />
-						<div className="nav-previous" dangerouslySetInnerHTML={{__html: previous}} />
-					</div>
-				</nav>
+				{ navigationNodes }
 			</div>
 		);
 	}
