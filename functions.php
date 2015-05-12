@@ -131,21 +131,19 @@ function picard_get_json( $_post ) {
 		// Get next and previous links
 		global $post;
 		$post = get_post( $_post['ID'] );
-		ob_start();
-		echo get_next_post_link();
-		$next_post_link = ob_get_contents();
-		ob_end_clean();
-		$next_post_link = str_replace( 'rel="next">', 'rel="next"><span class="screen-reader-text">', $next_post_link );
-		$next_post_link = str_replace( '</a> &raquo;', '</span></a>', $next_post_link );
-		ob_start();
-		echo get_previous_post_link();
-		$previous_post_link = ob_get_contents();
-		ob_end_clean();
-		$previous_post_link = str_replace( 'rel="prev">', 'rel="prev"><span class="screen-reader-text">', $previous_post_link );
-		$previous_post_link = str_replace( '</a>', '</span></a>', $previous_post_link );
-		$previous_post_link = str_replace( '&laquo; ', '', $previous_post_link );
-		$_post['next_post'] = $next_post_link;
-		$_post['previous_post'] = $previous_post_link;
+
+		$previous_post = get_adjacent_post( false, '', true );
+		if ( $previous_post ) {
+			$_post['previous_post_url']   = get_permalink( $previous_post );
+			$_post['previous_post_title'] = get_the_title( $previous_post );
+		}
+
+		$next_post = get_adjacent_post( false, '', false );
+		if ( $next_post ) {
+			$_post['next_post_url']   = get_permalink( $next_post );
+			$_post['next_post_title'] = get_the_title( $next_post );
+		}
+
 	}
 	return $_post;
 }
