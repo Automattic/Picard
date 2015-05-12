@@ -7,7 +7,7 @@ Use genericons for instant HiDPI, to change icon colors on the fly, or even with
 
 ## Usage
 
-To use it, place the `font` folder in your stylesheet directory and enqueue the genericons.css file. Now you can create an icon like this:
+To use it, place the `genericons` folder in your stylesheet directory and enqueue the genericons.css file. Now you can create an icon like this:
 
 ```
 .my-icon:before {
@@ -53,7 +53,7 @@ Fontello is very easy to use. Just drop the SVG files of the icons you want onto
 
 **Photoshop mockups**
 
-The `Genericons.ttf` file found in the `font` directory can be placed in your system fonts folder and used Photoshop or other graphics apps if you like.
+The `Genericons.ttf` file can be placed in your system fonts folder and used Photoshop or other graphics apps if you like.
 
 If you're using Genericons in your Photoshop mockups, please remember to delete the old version of the font from Font Book, and grab the new one from the zip file. This also affects using it in your webdesigns: if you have an old version of the font installed locally, that's the font that'll be used in your website as well, so if you're missing icons, check for old versions of the font on your system.
 
@@ -73,8 +73,30 @@ Note: On Android browsers with version 4.2, 4.3, and probably later, Genericons 
 
 We don't often update icons, but do very carefully when we get good feedback suggesting improvements. Please be mindful if you upgrade, and check that the updated icons behave as you intended.
 
+**Base64 encoding**
+
+By default, Genericons ships with a stylesheet that includes a base64 encoded version of the font. This is to sidestep issues with cross-origin requests for fonts, that happen when a stylesheet loads a font that's stored on a different domain or subdomain. This is very common when using caching plugins.
+
+Base64 encoding comes with a 25% filesize overhead compared to just loading the WOFF file directly. If you know that you won't be loading fonts across domains, or have the ability to edit your server config files to allow it, you can get slightly faster performance by loading Genericons without the base64 encoding. Simply edit `genericons.css` and edit the `@font-face` declaration to match this:
+
+```
+@font-face {
+	font-family: 'Genericons';
+		src: url('Genericons.woff') format('woff'),
+		url('Genericons.ttf') format('truetype'),
+		url('Genericons.svg#genericonsregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+```
+
+
 
 ## Changelog
+
+**3.3.1**
+
+Security Hardening: Remove Genericons example.html file. Please visit genericons.com instead.
 
 **3.3**
 
