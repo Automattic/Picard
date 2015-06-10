@@ -3,12 +3,29 @@
  */
 var React = require( 'react' ),
 	page = require( 'page' ),
-	request = require( 'superagent' );
+	url = require('url'),
+	request = require( 'superagent' ),
+	apiURL,
+	path;
 
 /**
  * Internal dependencies
  */
 var Content = require( '../content/content.jsx' );
+
+if(PICARD_CONFIG && PICARD_CONFIG.URL) {
+	//Setting up base url for installations directories in
+	apiURL = PICARD_CONFIG.URL + "/wp-json/";
+	path = url.parse(PICARD_CONFIG.URL).path;
+	if(path.length > 1) {
+		page.base(path);
+	}
+} else {
+	console.warn("Please ensure PICARD_CONFIG global value is set up");
+	apiURL = "/wp-json/";
+}
+
+
 
 var Router = React.createClass({
 
@@ -19,7 +36,7 @@ var Router = React.createClass({
 		page( '/', function ( ctx ) {
 			var data,
 				slug = ctx.params.slug,
-				url = "/wp-json/posts";
+				url = apiURL + "posts";
 			request
 				.get( url )
 				.end( function( err, res ) {
@@ -31,7 +48,7 @@ var Router = React.createClass({
 		page( '/:year/:month/:day/:slug', function ( ctx ) {
 			var data,
 				slug = ctx.params.slug,
-				url = "/wp-json/posts/?filter[name]=" + slug;
+				url = apiURL + "posts/?filter[name]=" + slug;
 			request
 				.get( url )
 				.end( function( err, res ) {
@@ -56,7 +73,7 @@ var Router = React.createClass({
 					slug = slug.substr(0, slug.length - 1);
 				}
 				var part = slug.substring(slug.lastIndexOf('/') + 1);
-				var url = "/wp-json/posts/?type[]=page&filter[name]=" + part;
+				var url = apiURL + "posts/?type[]=page&filter[name]=" + part;
 				request
 					.get( url )
 					.end( function( err, res ) {
