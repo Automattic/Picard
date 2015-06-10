@@ -10,13 +10,17 @@ var React = require( 'react/addons' ),
 var CommentList = require( './comment-list/comment-list.jsx' ),
 	CommentForm = require( './comment-form/comment-form.jsx' );
 
+if(!PICARD_CONFIG || !PICARD_CONFIG.URL) {
+	console.warn('Missing PICARD_CONFIG variables');
+}
+
 /**
  * Handles getting of comments from the server and posting of comments to the server
  */
 var Comments = React.createClass({
 
 	loadCommentsFromServer: function() {
-		var repliesLink = '/wp-json/posts/' + this.props.postID + '/comments/';
+		var repliesLink = PICARD_CONFIG.URL + '/wp-json/posts/' + this.props.postID + '/comments/';
 
 		var self = this;
 
@@ -34,7 +38,7 @@ var Comments = React.createClass({
 
 		var newComment,
 			self = this,
-			url = '/wp-json/picard/comments';
+			url = PICARD_CONFIG.URL + '/wp-json/picard/comments';
 		request
 			.post( url )
 			.type( 'form' )
