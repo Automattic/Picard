@@ -23,16 +23,16 @@ var Comment = React.createClass({
 				<article id={"div-comment-" + comment.ID} className="comment-body">
 					<footer className="comment-meta">
 						<div className="comment-author vcard">
-							<img src={author.avatar} className="avatar avatar-56" height="56" width="56" />
+							<img src={comment.author_avatar_urls[48]} className="avatar avatar-56" height="56" width="56" />
 							<b className="fn">
-								<a href={author.URL} rel="external nofollow" className="url">{author.name}</a>
+								<a href={comment.author_url} rel="external nofollow" className="url">{comment.author_name}</a>
 							</b>
 						</div>
 						<div className="comment-metadata">
 							<time dateTime={d}>{formattedDate + " " + formattedTime}</time>
 						</div>
 					</footer>
-					<div className="comment-content" dangerouslySetInnerHTML={{__html: comment.content}} />
+					<div className="comment-content" dangerouslySetInnerHTML={{__html: comment.content.rendered}} />
 					<div className="reply">
 						<a className="comment-reply-link">Reply</a>
 					</div>
