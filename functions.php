@@ -1,4 +1,30 @@
 <?php
+
+/**
+ * Checks whether the WordPress REST API plugin is active.
+ *
+ * Adds an admin notice and switches to the default theme if the plugin is not active.
+ */
+function picard_check_rest_api_dependency() {
+	if ( defined( 'JSON_API_VERSION' ) ) {
+		return;
+	}
+
+	// Add admin notice.
+	add_action( 'admin_notices', 'picard_activate_rest_api_notice' );
+	// Switch to the default theme.
+	switch_theme( WP_DEFAULT_THEME );
+}
+add_action( 'admin_init', 'picard_check_rest_api_dependency' );
+
+/**
+ * Prints the admin notice for when the Rest API plugin is not active.
+ */
+function picard_activate_rest_api_notice() {
+	printf( '<div class="error below-h2"><p>%s</p></div>',
+		esc_html__( 'The Picard theme requires the WordPress REST API plugin to be installed and activated.', 'picard' ) );
+}
+
 if ( ! function_exists( 'picard_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -160,6 +186,7 @@ function picard_api_init() {
 }
 add_action( 'wp_json_server_before_serve', 'picard_api_init' );
 
+if ( class_exists( 'WP_JSON_Comments' ) ) :
 class Picard_API_Comments extends WP_JSON_Comments {
 	public function register_routes( $routes ) {
 		$routes['/picard/comments'] = array(
@@ -189,3 +216,4 @@ class Picard_API_Comments extends WP_JSON_Comments {
 		return ( $comment_id ) ? $prepared_comment : array();
 	}
 }
+endif;
