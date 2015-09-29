@@ -1,4 +1,5 @@
 # Files
+.DS_Store
 style.css
 picard.js
 *.css.map
