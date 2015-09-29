@@ -94,6 +94,13 @@ Base64 encoding comes with a 25% filesize overhead compared to just loading the 
 
 ## Changelog
 
+**3.4**
+
+* Updated: Update Google Plus icon to new geometric version. This also *retires* the "alt" version, so *please be mindful if you choose to update, make sure you use the `f206` glyph, not the `f218` glyph, as it no longer exists!
+* New: Added helper rotation classes to the base CSS, thanks to geminorum. Apply `genericon-rotate-90` to rotate 90 degrees, -180, -270. Or `genericon-flip-horizontal` or -vertical. 
+
+*Again, it is important if you choose to update to this version, make sure you're not using `genericon-googleplus-alt` or unicode character `f218`, as that has been retired! Use `genericon-googleplus` and glyph `f206` instead!*
+
 **3.3.1**
 
 Security Hardening: Remove Genericons example.html file. Please visit genericons.com instead.

@@ -122,7 +122,7 @@ function picard_scripts() {
 
 	wp_enqueue_script( 'picard-script' );
 
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3.1' );
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4' );
 }
 add_action( 'wp_enqueue_scripts', 'picard_scripts' );
 
