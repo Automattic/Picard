@@ -160,13 +160,25 @@ function picard_api_init() {
 }
 add_action( 'wp_json_server_before_serve', 'picard_api_init' );
 
-class Picard_API_Comments extends WP_JSON_Comments {
-	public function register_routes( $routes ) {
-		$routes['/picard/comments'] = array(
-			array( array( $this, 'new_post' ), WP_JSON_Server::CREATABLE ),
-		);
+class Picard_API_Comments extends WP_REST_Comments_Controller {
+	//public function register_routes( $routes ) {
+		//$routes['/picard/comments'] = array(
+			//array( array( $this, 'new_post' ), WP_JSON_Server::CREATABLE ),
+		//);
 
-		return $routes;
+		//return $routes;
+	//}
+
+	public function register_routes() {
+
+		register_rest_route( 'wp/v2', '/picard/comments', array(
+			array(
+				'methods' => WP_REST_Server::CREATABLE,
+				'callback' => array( $this, 'new_post' ),
+			),
+
+		) );
+
 	}
 
 	public function new_post() {
@@ -184,7 +196,7 @@ class Picard_API_Comments extends WP_JSON_Comments {
 
 		$new_comment = get_comment( $comment_id );
 
-		$prepared_comment = $this->prepare_comment( $new_comment );
+		$prepared_comment = $this->prepare_item_for_response( $new_comment );
 
 		return ( $comment_id ) ? $prepared_comment : array();
 	}
