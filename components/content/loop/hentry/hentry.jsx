@@ -1,8 +1,7 @@
 /**
  * External dependencies
  */
-var React = require( 'react/addons' ),
-	page = require( 'page' );
+var React = require( 'react/addons' );
 
 /**
  * Internal dependencies
@@ -18,21 +17,30 @@ var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 /**
  * Renders post
  */
-Hentry = React.createClass({
+var Hentry = React.createClass({
 	handleAdd: function( e ) {
 		e.preventDefault();
 		url = this.props.link;
 		url = url.replace(/^.*\/\/[^\/]+/, '');
-		page( url );
+		//page( url );
 	},
 	render: function() {
-		var d = new Date( this.props.date ),
+		var entryContent,
+			d = new Date( this.props.date ),
 			formattedDate = d.toDateString();
+
+		if ( 'the_date' !== this.props.date ) {
+			d = new Date( this.props.date );
+			formattedDate = d.toDateString();
+		} else {
+			formattedDate = this.props.date;
+		}
 
 		// Decide whether or not to render comments and entry-content
 		var comments,
 			content;
-		if ( this.props.context !== 'index' && this.props.showExtra === true ) {
+		console.log( this.props );
+		if ( ( this.props.context !== 'index' && this.props.showExtra === true ) || this.props.loop ) {
 			comments = <Comments postID={ this.props.id } />;
 			entryContent = <EntryContent content={ this.props.content } />;
 		} else {
@@ -50,7 +58,7 @@ Hentry = React.createClass({
 			entryHeader = <div className="entry-thumbnail" style={thumbnailImage}>
 				<header className="entry-header">
 					<h1 className="entry-title">
-						<a onClick={this.handleAdd} href={this.props.link} rel="bookmark">
+						<a href={this.props.link} rel="bookmark">
 							{this.props.title}
 						</a>
 					</h1>
@@ -79,7 +87,7 @@ Hentry = React.createClass({
 				<article className={ postClass }>
 					{ entryHeader }
 
-					<ReactCSSTransitionGroup transitionName="picard-content">
+					<ReactCSSTransitionGroup transitionName="picard-content" component="div">
 						{ entryContent }
 					</ReactCSSTransitionGroup>
 				</article>

@@ -6,7 +6,7 @@ var React = require( 'react/addons' );
 /**
  * Renders links to the next and previous posts.
  */
-PostNavigation = React.createClass({
+var PostNavigation = React.createClass({
 
 	render: function() {
 		var previousPostLink;

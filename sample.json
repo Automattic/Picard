@@ -1,0 +1,12 @@
+[{
+	"id": "the_id",
+	"date": "the_date",
+	"link": "the_link",
+	"title": {
+		"rendered": "the_title"
+	},
+	"content": {
+		"rendered": "the_content"
+	},
+	"loop": "the_loop"
+}]

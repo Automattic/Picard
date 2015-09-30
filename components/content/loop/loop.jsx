@@ -1,8 +1,7 @@
 /**
  * External dependencies
  */
-var React = require( 'react/addons' ),
-	page = require( 'page' );
+var React = require( 'react/addons' );
 
 /**
  * Internal dependencies
@@ -15,7 +14,7 @@ var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 /**
  * Renders list of posts
  */
-Loop = React.createClass({
+var Loop = React.createClass({
 
 	render: function() {
 		var context = this.props.context,
@@ -42,7 +41,7 @@ Loop = React.createClass({
 
 		return (
 			<div>
-				<ReactCSSTransitionGroup transitionName="picard">
+				<ReactCSSTransitionGroup transitionName="picard" component="div">
 					{ postNodes }
 				</ReactCSSTransitionGroup>
 				{ navigationNodes }
