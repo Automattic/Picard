@@ -57,7 +57,7 @@ var Comments = React.createClass({
 	componentDidMount: function() {
 		this.loadCommentsFromServer();
 	},
-	
+
 	render: function() {
 		return (
 			<div id="comments" className="comments-area">
