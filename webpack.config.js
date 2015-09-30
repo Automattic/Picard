@@ -2,13 +2,23 @@ var fs = require( 'fs' ),
 	data = require( './sample.json' ),
 	React = require( 'react' ),
 	babel = require( 'babel/register' ),
+<<<<<<< HEAD
+=======
+	//posts = require( './components/content/content.jsx' );
+>>>>>>> Non-working beginnings of server-side render
 	posts = React.createFactory( require( './components/content/content.jsx' ) );
 
 //data = JSON.parse( data );
 
+<<<<<<< HEAD
 var markup = "<?php get_header(); ?>";
 markup += React.renderToStaticMarkup( posts({ data: data }) );
 markup += "<?php get_footer(); ?>";
+=======
+//var markup = "<?php get_header(); ?>";
+markup = React.renderToStaticMarkup( posts({ data: data }) );
+//markup += "<?php get_footer(); ?>";
+>>>>>>> Non-working beginnings of server-side render
 
 console.log( markup );
 
