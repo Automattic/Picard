@@ -30,7 +30,7 @@ var Loop = React.createClass({
 		var postNodes = this.props.data.map( function ( post ) {
 			loop = post.loop;
 			return (
-				<Hentry key={post.id} id={post.id} post_class={post.post_class} link={post.link} title={post.title} date={post.date} content={post.content} featured_image={ post.featured_image } context={ context } loop={post.loop} showExtra={ showExtra } />
+				<Hentry key={post.id} id={post.id} post_class={post.post_class} link={post.link} title={post.title} date={post.date} content={post.content} featured_image={ post.featured_image } context={ context } loop={ post.loop } showExtra={ showExtra } />
 			);
 		});
 
