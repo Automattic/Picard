@@ -2,14 +2,13 @@ var fs = require( 'fs' ),
 	data = require( './sample.json' ),
 	React = require( 'react' ),
 	babel = require( 'babel/register' ),
-	//posts = require( './components/content/content.jsx' );
 	posts = React.createFactory( require( './components/content/content.jsx' ) );
 
 //data = JSON.parse( data );
 
-//var markup = "<?php get_header(); ?>";
-markup = React.renderToStaticMarkup( posts({ data: data }) );
-//markup += "<?php get_footer(); ?>";
+var markup = "<?php get_header(); ?>";
+markup += React.renderToStaticMarkup( posts({ data: data }) );
+markup += "<?php get_footer(); ?>";
 
 console.log( markup );
 

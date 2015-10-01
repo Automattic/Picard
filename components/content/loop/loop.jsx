@@ -25,9 +25,12 @@ var Loop = React.createClass({
 			showExtra = true;
 		}
 
+		var loop;
+
 		var postNodes = this.props.data.map( function ( post ) {
+			loop = post.loop;
 			return (
-				<Hentry key={post.ID} id={post.ID} post_class={post.post_class} link={post.link} title={post.title} date={post.date} content={post.content} featured_image={ post.featured_image } context={ context } showExtra={ showExtra } />
+				<Hentry key={post.ID} id={post.ID} post_class={post.post_class} link={post.link} title={post.title} date={post.date} content={post.content} featured_image={ post.featured_image } context={ context } loop={ post.loop } showExtra={ showExtra } />
 			);
 		});
 
@@ -41,10 +44,12 @@ var Loop = React.createClass({
 
 		return (
 			<div>
+				{ loop ? 'the_loop' : null }
 				<ReactCSSTransitionGroup transitionName="picard" component="div">
 					{ postNodes }
 				</ReactCSSTransitionGroup>
 				{ navigationNodes }
+				{ loop ? 'end_loop' : null }
 			</div>
 		);
 	}
