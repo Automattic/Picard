@@ -2,32 +2,14 @@ var fs = require( 'fs' ),
 	data = require( './sample.json' ),
 	React = require( 'react' ),
 	babel = require( 'babel/register' ),
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 	//posts = require( './components/content/content.jsx' );
->>>>>>> Non-working beginnings of server-side render
-=======
->>>>>>> Update components for server-side rendering
 	posts = React.createFactory( require( './components/content/content.jsx' ) );
 
 //data = JSON.parse( data );
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 var markup = "<?php get_header(); ?>";
 markup += React.renderToStaticMarkup( posts({ data: data, bodyClass: 'index' }) );
 markup += "<?php get_footer(); ?>";
-=======
-//var markup = "<?php get_header(); ?>";
-markup = React.renderToStaticMarkup( posts({ data: data }) );
-//markup += "<?php get_footer(); ?>";
->>>>>>> Non-working beginnings of server-side render
-=======
-var markup = "<?php get_header(); ?>";
-markup += React.renderToStaticMarkup( posts({ data: data }) );
-markup += "<?php get_footer(); ?>";
->>>>>>> Update components for server-side rendering
 
 markup = markup.replace( /the_title/gi, '<?php the_title(); ?>' );
 markup = markup.replace( /the_link/gi, '<?php the_permalink(); ?>' );
