@@ -8,11 +8,11 @@ It means, that instead of loading new page every time you click a link, it uses 
 ## Installation
 
 ### 1. Working WordPress installation
-First, prepare a proper WordPress environment:
+Ensure you have a proper WordPress development environment for working with the REST API. You will need:
 
-* You will obviously need a working *WordPress* installation,
-* You will also need *WP REST API*. It is a plugin (with plans to incorporate into the WordPress core) that creates REST API to be used by the theme. Plugin is currently **NOT** in plugins repository, you have to upload the files manually. Install and activate the [WP REST API](https://github.com/WP-API/WP-API/tree/master) plugin (make sure that you are using the `master` branch – the default is currently develop),
-* Set your permlink structure to `/%year%/%monthnum%/%day%/%postname%/`.
+* a working WordPress <a href="https://codex.wordpress.org/Installing_WordPress">installation</a>
+* the <a href="https://wordpress.org/plugins/rest-api/">REST API version 2 plugin</a> from the WordPress.org plugin repository, installed and activated
+* your <a href="https://codex.wordpress.org/Settings_Permalinks_Screen">permalink</a> structure set to `/%year%/%monthnum%/%day%/%postname%/`
 
 ### 2. Theme building (for _team_ building go to your local meetup)
 Unlike other themes, this one uses a build process. JavaScript is an interpreted language, but we need to take certain steps (like transpiling React JSX syntax or SASS CSS syntax) to take the files from development phase to production. You will need the following tools:
