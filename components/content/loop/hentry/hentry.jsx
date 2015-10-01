@@ -40,7 +40,7 @@ var Hentry = React.createClass({
 		var comments,
 			content;
 		console.log( this.props );
-		if ( ( this.props.context !== 'index' && this.props.showExtra === true ) || this.props.loop ) {
+		if ( this.props.context !== 'index' && this.props.showExtra === true ) {
 			comments = <Comments postID={ this.props.id } />;
 			entryContent = <EntryContent content={ this.props.content } />;
 		} else {
@@ -71,7 +71,7 @@ var Hentry = React.createClass({
 		} else {
 			entryHeader = <header className="entry-header">
 				<h1 className="entry-title">
-					<a onClick={this.handleAdd} href={this.props.link} rel="bookmark">
+					<a href={this.props.link} rel="bookmark">
 						{this.props.title}
 					</a>
 				</h1>

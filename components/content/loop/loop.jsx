@@ -21,7 +21,7 @@ var Loop = React.createClass({
 			showExtra = false,
 			next,
 			previous;
-		if ( this.props.postID !== 0 && this.props.postID === this.props.data[0].ID ) {
+		if ( this.props.postID !== 0 && this.props.postID === this.props.data[0].id ) {
 			showExtra = true;
 		}
 

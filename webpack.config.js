@@ -16,7 +16,7 @@ var fs = require( 'fs' ),
 <<<<<<< HEAD
 <<<<<<< HEAD
 var markup = "<?php get_header(); ?>";
-markup += React.renderToStaticMarkup( posts({ data: data }) );
+markup += React.renderToStaticMarkup( posts({ data: data, bodyClass: 'index' }) );
 markup += "<?php get_footer(); ?>";
 =======
 //var markup = "<?php get_header(); ?>";
@@ -29,11 +29,47 @@ markup += React.renderToStaticMarkup( posts({ data: data }) );
 markup += "<?php get_footer(); ?>";
 >>>>>>> Update components for server-side rendering
 
+markup = markup.replace( /the_title/gi, '<?php the_title(); ?>' );
+markup = markup.replace( /the_link/gi, '<?php the_permalink(); ?>' );
+markup = markup.replace( /the_date/gi, '<?php the_date(); ?>' );
+markup = markup.replace( /the_content/gi, '<?php the_content(); ?>' );
+markup = markup.replace( /the_loop/gi, '<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>');
+markup = markup.replace( /end_loop/gi, '<?php endwhile; endif; ?>' );
+
 console.log( markup );
 
-//var replacedMarkup = markup.replace( /the_title/gi, '<?php the_title(); ?>' );
-//replacedMarkup = markup.replace( /the_content/gi, '<?php the_content(); ?>' );
-//replacedMarkup = markup.replace( /the_loop/gi, '<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>');
-//replacedMarkup = markup.replace( /end_loop/gi, '<?php endwhile; endif; ?>' );
+fs.writeFileSync( 'index.php', markup );
 
-//fs.writeFileSync( 'page.php', replacedMarkup );
+
+
+markup = "<?php get_header(); ?>";
+markup += React.renderToStaticMarkup( posts({ data: data, bodyClass: 'page' }) );
+markup += "<?php get_footer(); ?>";
+
+markup = markup.replace( /the_title/gi, '<?php the_title(); ?>' );
+markup = markup.replace( /the_link/gi, '<?php the_permalink(); ?>' );
+markup = markup.replace( /the_date/gi, '<?php the_date(); ?>' );
+markup = markup.replace( /the_content/gi, '<?php the_content(); ?>' );
+markup = markup.replace( /the_loop/gi, '<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>');
+markup = markup.replace( /end_loop/gi, '<?php endwhile; endif; ?>' );
+
+console.log( markup );
+
+fs.writeFileSync( 'page.php', markup );
+
+
+
+markup = "<?php get_header(); ?>";
+markup += React.renderToStaticMarkup( posts({ data: data, bodyClass: 'single' }) );
+markup += "<?php get_footer(); ?>";
+
+markup = markup.replace( /the_title/gi, '<?php the_title(); ?>' );
+markup = markup.replace( /the_link/gi, '<?php the_permalink(); ?>' );
+markup = markup.replace( /the_date/gi, '<?php the_date(); ?>' );
+markup = markup.replace( /the_content/gi, '<?php the_content(); ?>' );
+markup = markup.replace( /the_loop/gi, '<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>');
+markup = markup.replace( /end_loop/gi, '<?php endwhile; endif; ?>' );
+
+console.log( markup );
+
+fs.writeFileSync( 'single.php', markup );
