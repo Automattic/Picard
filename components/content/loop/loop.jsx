@@ -1,8 +1,7 @@
 /**
  * External dependencies
  */
-var React = require( 'react/addons' ),
-	page = require( 'page' );
+var React = require( 'react/addons' );
 
 /**
  * Internal dependencies
@@ -15,20 +14,23 @@ var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 /**
  * Renders list of posts
  */
-Loop = React.createClass({
+var Loop = React.createClass({
 
 	render: function() {
 		var context = this.props.context,
 			showExtra = false,
 			next,
 			previous;
-		if ( this.props.postID !== 0 && this.props.postID === this.props.data[0].ID ) {
+		if ( this.props.postID !== 0 && this.props.postID === this.props.data[0].id ) {
 			showExtra = true;
 		}
 
+		var loop;
+
 		var postNodes = this.props.data.map( function ( post ) {
+			loop = post.loop;
 			return (
-				<Hentry key={post.ID} id={post.ID} post_class={post.post_class} link={post.link} title={post.title} date={post.date} content={post.content} featured_image={ post.featured_image } context={ context } showExtra={ showExtra } />
+				<Hentry key={post.id} id={post.id} post_class={post.post_class} link={post.link} title={post.title} date={post.date} content={post.content} featured_image={ post.featured_image } context={ context } loop={ post.loop } showExtra={ showExtra } />
 			);
 		});
 
@@ -42,10 +44,12 @@ Loop = React.createClass({
 
 		return (
 			<div>
-				<ReactCSSTransitionGroup transitionName="picard">
+				{ loop ? 'the_loop' : null }
+				<ReactCSSTransitionGroup transitionName="picard" component="div">
 					{ postNodes }
 				</ReactCSSTransitionGroup>
 				{ navigationNodes }
+				{ loop ? 'end_loop' : null }
 			</div>
 		);
 	}

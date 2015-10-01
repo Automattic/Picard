@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Automattic/Picard",
   "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-runtime": "^5.8.25",
     "browserify": "~7.0.3",
     "gulp": "~3.8.10",
     "gulp-autoprefixer": "^2.0.0",
