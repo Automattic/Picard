@@ -19,7 +19,7 @@ var Router = React.createClass({
 		page( '/', function ( ctx ) {
 			var data,
 				slug = ctx.params.slug,
-				url = "/wp-json/posts";
+					url = "/wp-json/wp/v2/posts";
 			request
 				.get( url )
 				.end( function( err, res ) {
@@ -31,7 +31,7 @@ var Router = React.createClass({
 		page( '/:year/:month/:day/:slug', function ( ctx ) {
 			var data,
 				slug = ctx.params.slug,
-				url = "/wp-json/posts/?filter[name]=" + slug;
+					url = "/wp-json/wp/v2/posts/?filter[name]=" + slug;
 			request
 				.get( url )
 				.end( function( err, res ) {
@@ -56,7 +56,7 @@ var Router = React.createClass({
 					slug = slug.substr(0, slug.length - 1);
 				}
 				var part = slug.substring(slug.lastIndexOf('/') + 1);
-				var url = "/wp-json/posts/?type[]=page&filter[name]=" + part;
+				var url = "/wp-json/wp/v2/pages/?filter[name]=" + part;
 				request
 					.get( url )
 					.end( function( err, res ) {

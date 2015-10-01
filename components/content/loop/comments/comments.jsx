@@ -16,7 +16,7 @@ var CommentList = require( './comment-list/comment-list.jsx' ),
 var Comments = React.createClass({
 
 	loadCommentsFromServer: function() {
-		var repliesLink = '/wp-json/posts/' + this.props.postID + '/comments/';
+		var repliesLink = '/wp-json/wp/v2/comments?post=' + this.props.postID;
 
 		var self = this;
 
@@ -34,7 +34,7 @@ var Comments = React.createClass({
 
 		var newComment,
 			self = this,
-			url = '/wp-json/picard/comments';
+				url = '/wp-json/wp/v2/comments?post=' + this.props.postID;
 		request
 			.post( url )
 			.type( 'form' )
@@ -44,7 +44,7 @@ var Comments = React.createClass({
 					newComment = JSON.parse( res.text );
 					self.setState( { data: self.state.data.concat( [ newComment ] ) } );
 				} else {
-					console.error( '/wp-json/picard/comments', err.toString() );
+					console.error( '/wp-json/wp/v2/comments?post=' + self.props.postID, err.toString() );
 				}
 			});
 
@@ -57,7 +57,7 @@ var Comments = React.createClass({
 	componentDidMount: function() {
 		this.loadCommentsFromServer();
 	},
-	
+
 	render: function() {
 		return (
 			<div id="comments" className="comments-area">
