@@ -1,4 +1,11 @@
 <?php
+/**
+ * Setups up IS_LOCAL constant
+ */
+if( !defined('IS_LOCAL') ){
+	define( 'IS_LOCAL', false );
+}
+
 if ( ! function_exists( 'picard_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -116,13 +123,18 @@ function picard_montserrat_font_url() {
 }
 
 function picard_scripts() {
-	wp_enqueue_style( 'picard-style', get_stylesheet_uri(), '20150405' );
-
-	wp_register_script( 'picard-script', get_template_directory_uri() . '/picard.js', array(), '20150506', true );
-
-	wp_enqueue_script( 'picard-script' );
+	/**
+	 * Don't use minified file if developing locally
+	 */
+	$file_name = 'picard' . ( IS_LOCAL === false ? '' : '.min' );
 
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4' );
+
+	wp_enqueue_style( 'picard-style', get_template_directory_uri() . '/build/' . $file_name . '.css', '20160301' );
+
+	wp_register_script( 'picard-script', get_template_directory_uri() . '/build/' . $file_name . '.js', array(), '20160301', true );
+
+	wp_enqueue_script( 'picard-script' );
 }
 add_action( 'wp_enqueue_scripts', 'picard_scripts' );
 

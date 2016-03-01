@@ -9,3 +9,5 @@ node_modules
 .sass-cache
 
 *.codekit
+.idea
+build
